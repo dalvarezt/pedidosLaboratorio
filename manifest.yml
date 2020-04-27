@@ -1,0 +1,4 @@
+applications:
+ - name: pedidosLaboratorio
+   random-route: true
+   memory: 128M
