@@ -1,0 +1,94 @@
+extends layout
+
+block content
+    include navbar.pug
+    main(class="flex-shrink-0", role="main")
+        div(class="container")
+            h2.mt-2 Nueva Orden de Ex&aacute;menes
+            form(name="pedido")
+                h3.mt-2 Datos del paciente
+                .form-row.mb-2
+                    .col
+                        label(for="pacienteNombre" hidden=true) Nombre
+                        input(type="text" id="pacienteNombre" placeholder="Nombre del paciente" maxlength=256 minlength=5).form-control
+                .form-row
+                    .col
+                        .form-group
+                            label(for="pacienteEdad" hidden=true) Edad
+                            input(type="number" id="pacienteEdad" placeholder="Edad (años)" min=0 max=130).form-control
+                    .col
+                        .custom-control.custom-radio.custom-control-inline
+                            input(type="radio" name="pacienteSexo" id="pacienteSexoF" selected=false).custom-control-input
+                            label(for="pacienteSexoF").custom-control-label Femenino
+                        .custom-control.custom-radio.custom-control-inline
+                            input(type="radio" name="pacienteSexo" id="pacienteSexoM" selected=false).custom-control-input
+                            label(for="pacienteSexoM").custom-control-label Masculino
+                .form-row
+                    .col
+                        .form-group
+                            label(for="pacienteTelefono" hidden=true) Teléfono
+                            input(type="tel" id="pacienteTelefono" placeholder="Teléfono de contacto").form-control
+                    .col
+                        .form-group
+                            label(for="pacienteEmail" hidden=true) e-mail
+                            input(type="email" id="pacienteEmail" placeholder="e-mail paciente").form-control
+                ul.nav.nav-tabs.mb-3
+                    li.nav-item
+                        a(
+                            href="#" 
+                            onclick="toggleNavs('laboratorio')"
+                            id="nav_laboratorio"
+                        ).nav-link.active Laboratorio
+                    li.nav-item
+                        a(
+                            href="#"
+                            onclick="toggleNavs('imagen')"
+                            id="nav_imagen"
+                        ).nav-link Imagen
+                    li.nav-item
+                        a(
+                            href="#"
+                            onclick="toggleNavs('foto')"
+                            id="nav_foto"
+                        ).nav-link Capturar Fotografía
+                    
+
+                div(class="acordion" id="laboratorio")
+                    include laboratorio/hematologia.pug
+                    include laboratorio/coagulacion.pug
+                    include laboratorio/quimicaSanguinea.pug
+                div(class="container" id="imagen")
+                    p Examenes de imagen
+                div(id="foto").container
+                    .form-row
+                        .col
+                            input(type="file" accept="image/*" capture="environment" id="imageOrden")
+                            
+
+    script.
+        const navs = {
+            laboratorio:{
+                nav:'nav_laboratorio',
+                container:'laboratorio'
+            },
+            imagen:{
+                nav:'nav_imagen',
+                container:'imagen'
+            },
+            foto:{
+                nav:'nav_foto',
+                container:'foto'
+            }
+        }
+        const toggleNavs = (navId) => {
+            for (n in navs) {
+                if (n==navId) {
+                    $(`#${navs[n].nav}`).addClass('active')
+                    $(`#${navs[n].container}`).show();
+                } else {
+                    $(`#${navs[n].nav}`).removeClass('active')
+                    $(`#${navs[n].container}`).hide();
+                }
+            }
+        }
+        toggleNavs('laboratorio')

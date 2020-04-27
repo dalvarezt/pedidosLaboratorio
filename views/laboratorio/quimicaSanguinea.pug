@@ -1,0 +1,205 @@
+div(class="card")
+    div(class="card-header" id="labQuimicaSanguineaTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labQuimicaSanguinea",
+                aria-expanded="true",
+                aria-controls="labQuimicaSanguinea"
+            ) Química Sanguínea
+    div(id="labQuimicaSanguinea" class="collapse hide" aria-labelledby="labQuimicaSanguineaTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaGlucosaAyunas") 
+                        label(class="form-check-label" for="labQuimicaSanguineaGlucosaAyunas") Glucosa en ayunas
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaGlucosaPostprandial") 
+                        label(class="form-check-label" for="labQuimicaSanguineaGlucosaPostprandial") Glucosa postprandial
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check form-check-inline")
+                        input(
+                            class="form-check-input" 
+                            type="checkbox" 
+                            checked=false 
+                            id="labQuimicaSanguineaCurvaGlucosa"
+                            onchange="document.getElementById('labQuimicaSanguineaCurvaGlucosaHoras').hidden=!this.checked"
+                        ) 
+                        label(class="form-check-label" for="labQuimicaSanguineaCurvaGlucosa") Curva de Glucosa
+                        input(class="form-control w-25 ml-1" id="labQuimicaSanguineaCurvaGlucosaHoras" type="number" min=0 max=8 placeholder="Horas" hidden=true)
+                div(class="col-sm")
+                    div(class="form-check-inline")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaUrea"
+                            onchange="document.getElementById('labQuimicaSanguineaUreaBUNcb').hidden=!this.checked"
+                        ) 
+                        label(class="form-check-label" for="labQuimicaSanguineaUrea") Urea
+                    div(class="form-check-inline" id="labQuimicaSanguineaUreaBUNcb" hidden=true)
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaUreaBUN")
+                        label(class="form-check-label" for="labQuimicaSanguineaUreaBUN") BUN
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaCreatinina") 
+                        label(class="form-check-label" for="labQuimicaSanguineaCreatinina") Creatinina
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaAcidoUrico")
+                        label(class="form-check-label" for="labQuimicaSanguineaAcidoUrico") Ácido urico
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaLipidosTotales") 
+                        label(class="form-check-label" for="labQuimicaSanguineaLipidosTotales") Lípidos totales (Col-Tg-HDL-LDL)
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaColesterol")
+                        label(class="form-check-label" for="labQuimicaSanguineaColesterol") Colesterol
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaColesterolHDL") 
+                        label(class="form-check-label" for="labQuimicaSanguineaTiempoColesterolHDL") HDL - Colesterol
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaColesterolLDL")
+                        label(class="form-check-label" for="labQuimicaSanguineaColesterolLDL") LDL - Colesterol
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaTrigliceridos") 
+                        label(class="form-check-label" for="labQuimicaSanguineaTiempoTrigliceridos") Triglicéridos
+                div(class="col-sm")
+                    div(class="form-check")
+                            input(class="form-check-input" type="checkbox" checked=false id="labCouagulacionVLDL")
+                            label(class="form-check-label" for="labCouagulacionVLDL") VLDL
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaApolipoproteinaA")
+                        label(class="form-check-label" for="labQuimicaSanguineaApolipoproteinaA") Apolipoproteína A
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaApolipoproteinaB") 
+                        label(class="form-check-label" for="labQuimicaSanguineaApolipoproteinaB") Apolipoproteína B
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaFosfatasaAcida") 
+                        label(class="form-check-label" for="labQuimicaSanguineaFosfatasaAcida") Fosfatasa ácida
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaFosfatasaAcidaProstatica")
+                        label(class="form-check-label" for="labQuimicaSanguineaFosfatasaAcidaProstatica") Fosfatasa ácida prostática
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaBilirrubinasTID") 
+                        label(class="form-check-label" for="labQuimicaSanguineaBilirrubinasTID") Bilirrubinas (T-I-D)
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaAmilasa")
+                        label(class="form-check-label" for="labQuimicaSanguineaAmilasa") Amilasa
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaProteinasTotales") 
+                        label(class="form-check-label" for="labQuimicaSanguineaProteinasTotales") Proteinas totales
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaLipasa")
+                        label(class="form-check-label" for="labQuimicaSanguineaLipasa") Lipasa
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaAlbuminaGlobulina") 
+                        label(class="form-check-label" for="labQuimicaSanguineaAlbuminaGlobulina") Albúmina / globulina
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaGlucosa6FosfatoDH")
+                        label(class="form-check-label" for="labQuimicaSanguineaGlucosa6FosfatoDH") Glucosa 6 fosfato DH
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaHBGlicosilada") 
+                        label(class="form-check-label" for="labQuimicaSanguineaHBGlicosilada") Hb glicosilada
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaDeshidrogenasaLactica")
+                        label(class="form-check-label" for="labQuimicaSanguineaDeshidrogenasaLactica") Deshidrogenasa Láctica
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaFructosamina") 
+                        label(class="form-check-label" for="labQuimicaSanguineaFructosamina") Fructosamina
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaColinesterasa")
+                        label(class="form-check-label" for="labQuimicaSanguineaColinesterasa") Colinesterasa
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaHierro") 
+                        label(class="form-check-label" for="labQuimicaSanguineaHierro") Hierro
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaVitaminaB12")
+                        label(class="form-check-label" for="labQuimicaSanguineaVitaminaB12") Vitamina B12
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaTransferrina") 
+                        label(class="form-check-label" for="labQuimicaSanguineaTransferrina") Transferrina
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaAcidoFolico")
+                        label(class="form-check-label" for="labQuimicaSanguineaAcidoFolico") Ácido Fólico
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaFerritina")
+                        label(class="form-check-label" for="labQuimicaSanguineaFerritina") Ferritina
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaIndSaturacion") 
+                        label(class="form-check-label" for="labQuimicaSanguineaIndSaturacion") Ind. saturación
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaTGO_AST") 
+                        label(class="form-check-label" for="labQuimicaSanguineaTGO_AST") TGO / AST
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaCPK")
+                        label(class="form-check-label" for="labQuimicaSanguineaCPK") CPK
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaTGP_ALT") 
+                        label(class="form-check-label" for="labQuimicaSanguineaTGP_ALT") TGP / ALT
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaCPK_MB")
+                        label(class="form-check-label" for="labQuimicaSanguineaCPK_MB") CPK - MB
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaGammaGT") 
+                        label(class="form-check-label" for="labQuimicaSanguineaGammaGT") Gamma GT
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaTroponina")
+                        label(class="form-check-label" for="labQuimicaSanguineaTroponina") Troponina
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaFosfatasaAlcalina") 
+                        label(class="form-check-label" for="labQuimicaSanguineaFosfatasaAlcalina") Fosfatasa alcalina
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labQuimicaSanguineaAldolasa")
+                        label(class="form-check-label" for="labQuimicaSanguineaAldolasa") Aldolasa

@@ -1,0 +1,49 @@
+div(class="card")
+    div(class="card-header" id="labHematologiaTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labHematologia",
+                aria-expanded="true",
+                aria-controls="labHematologia"
+            ) Hematología
+    div(id="labHematologia" class="collapse show" aria-labelledby="labHematologiaTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaBiometriaHematica") 
+                        label(class="form-check-label" for="labHematologiaBiometriaHematica") Biometría Hemática
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaHematocrito") 
+                        label(class="form-check-label" for="labHematologiaHematocrito") Hematocrito
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaReticulocitos") 
+                        label(class="form-check-label" for="labHematologiaReticulocitos") Reticulocitos
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaPlaquetas") 
+                        label(class="form-check-label" for="labHematologiaPlaquetas") Plaquetas
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaSedimentacion") 
+                        label(class="form-check-label" for="labHematologiaSedimentacion") Sedimentación
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaFormulaLeucocitica")
+                        label(class="form-check-label" for="labHematologiaFormulaLeucocitica") Fómula Leucocitica
+            div(class="row")
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaHemoparasitos") 
+                        label(class="form-check-label" for="labHematologiaHemoparasitos") Hemoparásitos
+                div(class="col-sm")
+                    div(class="form-check")
+                        input(class="form-check-input" type="checkbox" checked=false id="labHematologiaGrupoSanguineo")
+                        label(class="form-check-label" for="labHematologiaGrupoSanguineo") Grupo Sanguineo

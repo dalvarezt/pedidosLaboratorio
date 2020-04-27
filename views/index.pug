@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  include navbar.pug
+  main(role="main", class="flex-shrink-0")
+    div(class="container")
+      h1 Servicio de órdenes de exámenes
+      p.lead Esta aplicación web permite a los médicos generar una orden de exámenes de laboratorio y de imagen para sus pacientes
+      p Nosotros nos hacemos cargo de contactar al paciente y coordinar la toma de muestras a domicilio o su visita al centro de diagnóstico más cercano
+      a(href="/home").btn.btn-primary.btn-lg.active Ingresar
+      
