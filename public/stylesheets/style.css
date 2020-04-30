@@ -1,3 +1,24 @@
 main > .container {
   padding: 60px 15px 0;
 }
+
+.arrow-toggle.collapsed .icon-arrow-down
+{
+  display: none;
+}
+
+.arrow-toggle .icon-arrow-down
+{
+  display: inline-block;
+}
+
+.arrow-toggle.collapsed .icon-arrow-up
+{
+  display: inline-block;
+}
+
+.arrow-toggle .icon-arrow-up
+{
+  display: none;
+}
+
