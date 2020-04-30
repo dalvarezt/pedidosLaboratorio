@@ -1,76 +1,97 @@
 div(class="card")
-    div(class="card-header" id="labCoagulacionTitulo")
+    div(class="card-header bg-secondary" id="labCoagulacionTitulo")
         h2(class="mb-0")
             button(
-                class="btn btn-link",
+                class="btn btn-link text-white",
                 type="button",
                 data-toggle="collapse" 
                 data-target="#labCoagulacion",
                 aria-expanded="true",
                 aria-controls="labCoagulacion"
-            ) Coagulación
+            ) 
+                span(data-toggle="collapse" data-target="#labCoagulacion").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Coagulación
     div(id="labCoagulacion" class="collapse hide" aria-labelledby="labCoagulacionTitulo" data-parent="#laboratorio")
         div(class="card-body")
-            div(class="row")
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionTP") 
-                        label(class="form-check-label" for="labCoagulacionTP") TP
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionTTP") 
-                        label(class="form-check-label" for="labCoagulacionTTP") TTP
-            div(class="row")
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionTiempoTrombina") 
-                        label(class="form-check-label" for="labCoagulacionTiempoTrombina") Tiempo trombina
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionINR") 
-                        label(class="form-check-label" for="labCoagulacionINR") INR
-            div(class="row")
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionTiempoCoagulacion") 
-                        label(class="form-check-label" for="labCoagulacionTiempoCoagulacion") Tiempo coagulación
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionFibrinogeno")
-                        label(class="form-check-label" for="labCoagulacionFibrinogeno") Fibrinógeno
-            div(class="row")
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionTiempoHemorragia") 
-                        label(class="form-check-label" for="labCoagulacionTiempoHemorragia") Tiempo Hemorragia
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionAntitrombina3")
-                        label(class="form-check-label" for="labCoagulacionAntitrombina3") Antitrombina III
-            div(class="row")
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionCoombsDirecto") 
-                        label(class="form-check-label" for="labCoagulacionTiempoCoombsDirecto") Coombs directo
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionCoombsIndirecto")
-                        label(class="form-check-label" for="labCoagulacionCoombsIndirecto") Indirecto
-            div(class="row")
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionDimeroD") 
-                        label(class="form-check-label" for="labCoagulacionTiempoDimeroD") Dímero D
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionRetraccionCoagulo")
-                        label(class="form-check-label" for="labCoagulacionRetraccionCoagulo") Retracción de coágulo
-            div(class="row")
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionOtros") 
-                        label(class="form-check-label" for="labCoagulacionOtros") Otros
-                div(class="col-sm")
-                    div(class="form-check")
-                        input(class="form-check-input" type="checkbox" checked=false id="labCoagulacionAnticoagulanteLupico")
-                        label(class="form-check-label" for="labCoagulacionAnticoagulanteLupico") Anticouagulante lúpico
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionTP" name="lab.coagulacion" value="TP") 
+                            label(class="text-dark" for="labCoagulacionTP") TP
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionTTP" name="lab.coagulacion" value="TTP") 
+                            label(class="text-dark" for="labCoagulacionTTP") TTP
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionTiempoTrombina" name="lab.coagulacion" value="Tiempo trombina") 
+                            label(class="text-dark" for="labCoagulacionTiempoTrombina") Tiempo trombina
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionINR" name="lab.coagulacion" value="INR") 
+                            label(class="text-dark" for="labCoagulacionINR") INR
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionTiempoCoagulacion" name="lab.coagulacion" value="Tiempo coagulación") 
+                            label(class="text-dark" for="labCoagulacionTiempoCoagulacion") Tiempo coagulación
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionFibrinogeno" name="lab.coagulacion" value="Fibrinógeno")
+                            label(class="text-dark" for="labCoagulacionFibrinogeno") Fibrinógeno
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionTiempoHemorragia" name="lab.coagulacion" value="Tiempo hemorragia") 
+                            label(class="text-dark" for="labCoagulacionTiempoHemorragia") Tiempo hemorragia
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionAntitrombina3" name="lab.coagulacion" value="AntitrombinaIII")
+                            label(class="text-dark" for="labCoagulacionAntitrombina3") Antitrombina III
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionCoombsDirecto" name="lab.coagulacion" value="Coombs directo") 
+                            label(class="text-dark" for="labCoagulacionCoombsDirecto") Coombs directo
+                .col-sm
+                    .checkbox
+                        label
+                            //- TODO: Preguntar si es "Coombs indirecto" y si tiene sentido seleccionarlo solo o si el usuario debería 
+                                seleccionar Coombs directo antes.
+                            input( type="checkbox" checked=false id="labCoagulacionCoombsIndirecto" name="lab.coagulacion" value="Indirecto")
+                            label(class="text-dark" for="labCoagulacionCoombsIndirecto") Indirecto
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionDimeroD" name="lab.coagulacion" value="Dimero D") 
+                            label(class="text-dark" for="labCoagulacionDimeroD") Dímero D
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionRetraccionCoagulo" name="lab.coagulacion" value="Retracción de coágulo")
+                            label(class="text-dark" for="labCoagulacionRetraccionCoagulo") Retracción de coágulo
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            //- TODO: Preguntar si "Otros" requiere un campo de observaciones
+                            input( type="checkbox" checked=false id="labCoagulacionOtros" name="lab.coagulacion" value="Otros") 
+                            label(class="text-dark" for="labCoagulacionOtros") Otros
+                .col-sm
+                    .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labCoagulacionAnticoagulanteLupico" name="lab.coagulacion" value="Anticoagulante lúpico")
+                            label(class="text-dark" for="labCoagulacionAnticoagulanteLupico") Anticouagulante lúpico

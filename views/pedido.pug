@@ -2,37 +2,38 @@ extends layout
 
 block content
     include navbar.pug
+    script(src="/javascripts/pedido.js")
     main(class="flex-shrink-0", role="main")
         div(class="container")
             h2.mt-2 Nueva Orden de Ex&aacute;menes
-            form(name="pedido")
+            form(name="pedido" method="POST" action="/pedido" id="formPedido").mb-5.needs-validation
                 h3.mt-2 Datos del paciente
                 .form-row.mb-2
                     .col
-                        label(for="pacienteNombre" hidden=true) Nombre
-                        input(type="text" id="pacienteNombre" placeholder="Nombre del paciente" maxlength=256 minlength=5).form-control
+                        label(for="pacienteNombre" hidden=true ) Nombre
+                        input(type="text" name="paciente.nombre" id="pacienteNombre" placeholder="Nombre del paciente" maxlength=256 minlength=5 required).form-control
                 .form-row
                     .col
                         .form-group
-                            label(for="pacienteEdad" hidden=true) Edad
-                            input(type="number" id="pacienteEdad" placeholder="Edad (años)" min=0 max=130).form-control
+                            label(for="pacienteEdad" hidden=true ) Edad
+                            input(type="number" name="paciente.edad" id="pacienteEdad" placeholder="Edad (años)" min=0 max=130 required).form-control
                     .col
                         .custom-control.custom-radio.custom-control-inline
-                            input(type="radio" name="pacienteSexo" id="pacienteSexoF" selected=false).custom-control-input
+                            input(type="radio" name="paciente.sexo" id="pacienteSexoF" value="F" checked=true).custom-control-input
                             label(for="pacienteSexoF").custom-control-label Femenino
                         .custom-control.custom-radio.custom-control-inline
-                            input(type="radio" name="pacienteSexo" id="pacienteSexoM" selected=false).custom-control-input
+                            input(type="radio" name="paciente.sexo" id="pacienteSexoM" value="M" checked=false).custom-control-input
                             label(for="pacienteSexoM").custom-control-label Masculino
                 .form-row
                     .col
                         .form-group
                             label(for="pacienteTelefono" hidden=true) Teléfono
-                            input(type="tel" id="pacienteTelefono" placeholder="Teléfono de contacto").form-control
+                            input(type="tel" name="paciente.telefono" id="pacienteTelefono" placeholder="Teléfono de contacto" required).form-control
                     .col
                         .form-group
                             label(for="pacienteEmail" hidden=true) e-mail
-                            input(type="email" id="pacienteEmail" placeholder="e-mail paciente").form-control
-                ul.nav.nav-tabs.mb-3
+                            input(type="email" id="pacienteEmail" placeholder="e-mail paciente" name="paciente.email").form-control
+                ul.nav.nav-pills.nav-justified.mb-3
                     li.nav-item
                         a(
                             href="#" 
@@ -62,14 +63,21 @@ block content
                 div(id="foto").container
                     .form-row
                         .col
-                            input(type="file" accept="image/*" capture="environment" id="imageOrden")
-                            
-
+                            input(type="image" accept="image/*" capture="environment" id="imageOrden")
+                
+                .fixed-bottom
+                    .d-flex.flex-row-reverse.bg-light
+                        .p-2.mr-5   
+                            button(type="submit" data-toggle="tooltip" data-placement="top" title="Enviar").btn.btn-success.bmd-btn-fab
+                                i.material-icons done
+                        .p-2.mr-1
+                            button(type="button" data-toggle="tooltip" data-placement="top" title="Cancelar").btn.btn-danger.bmd-btn-fab
+                                i.material-icons cancel
     script.
         const navs = {
             laboratorio:{
                 nav:'nav_laboratorio',
-                container:'laboratorio'
+                container:'laboratorio' 
             },
             imagen:{
                 nav:'nav_imagen',
