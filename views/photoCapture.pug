@@ -1,0 +1,11 @@
+form(name="photo-capture" action="/upload" method="POST")
+    .form-row
+        .col(id="photoAlerts")
+    .form-row
+        .col
+            .upload-btn-wrapper
+                button(type="button" id="imagenOrdenBtn").btn.btn-basic.bmd-btn-fab
+                    i.material-icons add_a_photo
+                input(type="file" accept="image/*" capture="environment" id="imagenOrden")
+    .form-row
+        .col(id="photoCanvas").d-flex
