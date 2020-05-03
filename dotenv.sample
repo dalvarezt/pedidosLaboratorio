@@ -1,0 +1,13 @@
+
+# APP-ID variables
+SESSION_SECRET = 
+TENANT_ID = 
+CLIENT_ID = 
+APPID_SECRET = 
+OAUTH_SERVER_URL = 
+SERVER_URL = http://localhost:3000
+# Cloudant db connection
+CLOUDANT_URL = 
+CLOUDANT_USERNAME = 
+CLOUDANT_PASSWORD = 
+CLOUDANT_DB = db_pedidosexamenes
