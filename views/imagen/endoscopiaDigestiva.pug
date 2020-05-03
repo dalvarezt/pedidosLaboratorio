@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="imagenEndoscopiaTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#imagenEndoscopia",
+                aria-expanded="true",
+                aria-controls="imagenEndoscopia"
+            ) 
+                span(data-toggle="collapse" data-target="#imagenEndoscopia").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Endoscopia Digestiva
+    div(id="imagenEndoscopia" class="collapse hide" aria-labelledby="imagenEndoscopiaTitulo" data-parent="#imagen")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 
