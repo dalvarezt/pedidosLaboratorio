@@ -64,8 +64,26 @@ block content
                     include laboratorio/hematologia.pug
                     include laboratorio/coagulacion.pug
                     include laboratorio/quimicaSanguinea.pug
-                div(class="container" id="imagen")
-                    p Examenes de imagen
+                    include laboratorio/inmunodiagnostico.pug
+                    include laboratorio/drogas.pug
+                    include laboratorio/orina.pug
+                    include laboratorio/heces.pug 
+                    include laboratorio/bacteriologia.pug
+                    include laboratorio/electrolitos.pug 
+                    include laboratorio/autoinmunidad.pug 
+                    include laboratorio/marcadoresTumorales.pug 
+                    include laboratorio/estudiosEspeciales.pug 
+                    include laboratorio/patologia.pug 
+                    include laboratorio/seroinmunologia.pug 
+                    include laboratorio/perfiles.pug 
+                div(class="acordion" id="imagen")
+                    include imagen/tomografiaAxialComputarizada.pug 
+                    include imagen/ecografiaMedica.pug 
+                    include imagen/rayosXMamografia.pug 
+                    include imagen/densitometria.pug 
+                    include imagen/densitometriaPediatrica.pug 
+                    include imagen/endoscopiaDigestiva.pug 
+                    include imagen/otrosServicios.pug 
                 div(id="foto").container
                     include photoCapture.pug
                         
