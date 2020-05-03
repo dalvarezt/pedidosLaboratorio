@@ -47,7 +47,7 @@ div(class="card")
                                     type="number" 
                                     min=0 max=8 
                                     placeholder="Horas" 
-                                    name="lab.quimicaSanguinea.curvaGlucosaHoras"
+                                    onchange="$('#labQuimicaSanguineaCurvaGlucosa').val('Curva de glucosa - ' + this.value + 'h')"
                                 ) 
                 .col-sm
                     .checkbox
@@ -65,7 +65,13 @@ div(class="card")
                         .d-sm-inline-flex.ml-3
                             .checkbox
                                 label(id="labQuimicaSanguineaUreaBUNcb").collapse
-                                    input(type="checkbox" checked=false id="labQuimicaSanguineaUreaBUN" name="lab.quimicaSanguinea.urea" value="BUN")
+                                    input(
+                                        type="checkbox" 
+                                        checked=false 
+                                        id="labQuimicaSanguineaUreaBUN" 
+                                        value="Urea|Urea - BUN"
+                                        onchange="var v=this.value.split('|'); $('#labQuimicaSanguineaUrea').val(this.checked ? v[1] : v[0])"
+                                    )
                                     label(class="text-dark" for="labQuimicaSanguineaUreaBUN") BUN
             .row
                 .col-sm
