@@ -17,6 +17,8 @@ const passport = require('passport');
 const WebAppStrategy = require('ibmcloud-appid').WebAppStrategy;
 app.use(passport.initialize());
 
+
+
 app.use(session({
   secret:process.env.SESSION_SECRET,
   resave:true,
@@ -41,7 +43,7 @@ passport.serializeUser(function(user, cb) {
 passport.deserializeUser(function(obj, cb) {
 	cb(null, obj);
 });
-console.log(WebAppStrategy.STRATEGY_NAME);
+
 app.get("/login", passport.authenticate(WebAppStrategy.STRATEGY_NAME))
 app.get("/logout", function(req,res,next){
   WebAppStrategy.logout(req);
@@ -53,12 +55,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({limit:'4mb}'}));
+app.use(express.urlencoded({ extended: false, limit:'4mb' }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+// Middleware to get user agent on a var for pug
+// Thanks to @zemirco on https://stackoverflow.com/a/15380234/6045784
+app.use( (req, res, next) => {
+  res.locals.isMobile = req.get('User-Agent')
+    .match(/(Android)|(iPhone)|(Windows Phone (OS 7|8.0))|(XBLWP)|(ZuneWP)|(w(eb)?OSBrowser)|(webOS)|(Kindle\/(1.0|2.0|2.5|3.0))/);
+  next();
+})
 
 app.use('/', indexRouter);
 
@@ -66,6 +74,7 @@ app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  console.debug(req.headers)
   next(createError(404));
 });
 
