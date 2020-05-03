@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="labBacteriologiaTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labBacteriologia",
+                aria-expanded="true",
+                aria-controls="labBacteriologia"
+            ) 
+                span(data-toggle="collapse" data-target="#labBacteriologia").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Bacteriologia
+    div(id="labBacteriologia" class="collapse hide" aria-labelledby="labBacteriologiaTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 

@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="labHecesTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labHeces",
+                aria-expanded="true",
+                aria-controls="labHeces"
+            ) 
+                span(data-toggle="collapse" data-target="#labHeces").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Heces
+    div(id="labHeces" class="collapse hide" aria-labelledby="labHecesTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 

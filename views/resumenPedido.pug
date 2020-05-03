@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  include navbar.pug
+  main(role="main", class="flex-shrink-0")
+    .container
+        .row
+            .col
+                h1 Resumen de la Orden
+                p Por favor, verifique que los datos de la orden sean correctos
+                h2 Datos del Paciente
+        .row
+            .col-4
+                em Nombre del paciente
+            .col-8
+                #{pedido.paciente.nombre}
+        .row
+            .col-2
+                em Edad
+            .col-4
+                #{pedido.paciente.edad}
+            .col-2
+                em Sexo
+            .col-4
+                if pedido.paciente.sexo==F
+                    | Femenino
+                else
+                    | Masculino
+        .row
+            .col-2
+                em Teléfono
+            .col-4
+                #{pedido.paciente.telefono}
+            .col-2
+                em Correo electrónico
+            .col-4
+                #{pedido.paciente.email}
+    if pedido.lab
+        .row
+            .col-12
+                h3 Exámenes de Laboratorio
+        .row
+            if pedido.lab
+                .col-12
+                    ul.ost-group
+                    if pedido.lab.hematologia
+                        li.list-group-item.active Hematología
+                        each item in pedido.lab.hematologia
+                            li.list-group-item= item
+                    if pedido.lab.coagulacion
+                        li.list-group-item.active Coagulación
+                            each item in pedido.lab.coagulacion
+                                li.list-item= item
+                    if pedido.lab.quimicaSanguinea
+                        li.list-group-item.active Química Sanguínea
+                            each item in pedido.lab.quimicaSanguinea
+                                li.list-group-item= item
+        
+
+
+        

@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="labEstudiosEspecialesTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labEstudiosEspeciales",
+                aria-expanded="true",
+                aria-controls="labEstudiosEspeciales"
+            ) 
+                span(data-toggle="collapse" data-target="#labEstudiosEspeciales").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Estudios Especiales
+    div(id="labEstudiosEspeciales" class="collapse hide" aria-labelledby="labEstudiosEspecialesTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 

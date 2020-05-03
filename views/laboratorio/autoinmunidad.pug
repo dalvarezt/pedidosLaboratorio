@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="labAutoinmunidadTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labAutoinmunidad",
+                aria-expanded="true",
+                aria-controls="labAutoinmunidad"
+            ) 
+                span(data-toggle="collapse" data-target="#labAutoinmunidad").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Autoinmunidad
+    div(id="labAutoinmunidad" class="collapse hide" aria-labelledby="labAutoinmunidadTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 

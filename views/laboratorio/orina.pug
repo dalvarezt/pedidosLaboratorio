@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="labOrinaTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labOrina",
+                aria-expanded="true",
+                aria-controls="labOrina"
+            ) 
+                span(data-toggle="collapse" data-target="#labOrina").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Orina
+    div(id="labOrina" class="collapse hide" aria-labelledby="labOrinaTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 

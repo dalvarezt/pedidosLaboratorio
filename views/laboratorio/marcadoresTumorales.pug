@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="labMarcadoresTumoralesTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labMarcadoresTumorales",
+                aria-expanded="true",
+                aria-controls="labMarcadoresTumorales"
+            ) 
+                span(data-toggle="collapse" data-target="#labMarcadoresTumorales").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Marcadores Tumorales
+    div(id="labMarcadoresTumorales" class="collapse hide" aria-labelledby="labMarcadoresTumoralesTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 

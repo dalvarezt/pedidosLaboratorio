@@ -1,0 +1,19 @@
+div(class="card")
+    div(class="card-header bg-secondary" id="labDrogasTitulo")
+        h2(class="mb-0")
+            button(
+                class="btn btn-link text-white",
+                type="button",
+                data-toggle="collapse" 
+                data-target="#labDrogas",
+                aria-expanded="true",
+                aria-controls="labDrogas"
+            ) 
+                span(data-toggle="collapse" data-target="#labDrogas").arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Drogas
+    div(id="labDrogas" class="collapse hide" aria-labelledby="labDrogasTitulo" data-parent="#laboratorio")
+        div(class="card-body")
+            .row
+                //- TODO: @IsabelNaranjo 
