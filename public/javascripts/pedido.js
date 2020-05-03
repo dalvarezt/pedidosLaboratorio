@@ -10,32 +10,45 @@ function getUID() {
     return uint32.toString(16);
 }
 
-/** Form validation routine */
-(function() {
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
+/**
+ * Performs Bootstrap's form validation and if passes, shows a confirmation dialog
+ * for the user to cofirm a submission
+ * @param {Form} form The form being submitted
+ * @param {function} cb A callback function
+ */
+function validateConfirmSumbit(form, cb) {
+    //var form = e.target;
+    if (form.checkValidity()) {
+        bootbox.confirm( {
+            message:"Está seguro de continuar con el envío?",
+            buttons: {
+                confirm: {
+                    label:"Aceptar",
+                    className: "btn-primary"
+    
+                },
+                cancel:{
+                    label:"Cancelar",
+                    className:"btn-secondary"
+                }
+            },
+            callback:cb
+        })
+    } else {
+        form.classList.add('was-validated')
+        cb(false)
+    }
+}
 
 /* Photo upload - prepare input type=file */
 
 class PhotoCollection {
-    MAX_COUNT=4;
-    FILE_INPUT_ID="imagenOrden";
-    INPUT_BUTTON_ID="imagenOrdenBtn"
-    ALERT_CONTAINER_ID="photoAlerts"
-    CANVAS_CONTAINER_ID="photoCanvas"
+    MAX_COUNT = 4;
+    FILE_INPUT_ID = "imagenOrden";
+    FORM_ID = "formPedido";
+    INPUT_BUTTON_ID = "imagenOrdenBtn"
+    ALERT_CONTAINER_ID = "photoAlerts"
+    CANVAS_CONTAINER_ID = "photoCanvas"
     ALERTS = { ERROR:"danger", WARNING:"warning", INFO:"success"}
 
 
@@ -46,6 +59,46 @@ class PhotoCollection {
         this.isDisabled = false;
         this.fileInput.on('change', this.fileInputChange.bind(this))
         $(document).on('remove-photo', this.removePhoto.bind(this))
+        $(`#${this.FORM_ID}`).on("submit", this.formSumbitHandler.bind(this))
+    }
+
+    formSumbitHandler(e) {
+        e.preventDefault();
+        var form = e.target; 
+        validateConfirmSumbit(form, result => {
+            if(result) {
+                if(this.photos.size>0) {
+                    var formData = new FormData(form);
+                    var promises = [];
+                    this.photos.forEach( (photo) => {
+                        promises.push( photo.getUploadData().then(photoData => {
+                            formData.append("photoOrder", photoData, photo.file.name)
+                        }))
+                    })
+                    Promise.all(promises).then( () => {
+                        formData.delete(this.FILE_INPUT_ID)
+                        
+                        $('#uploadingModal').modal('show')
+                        let request = new XMLHttpRequest();
+                        request.addEventListener("load", (e) =>{
+                            //TODO: handle status other than 200 as errors
+                            window.location.replace("/home")
+                        })
+                        request.addEventListener("error",(e) => {
+                            $('#uploadingModal').modal('hide')
+                            bootbox.alert("Ocurrió un error cargando la orden")
+                            console.log(e.message);
+                        })
+                        request.open('POST','pedidoPhotos');
+                        request.send(formData);
+        
+                    })
+                } else {
+                    form.submit();
+                }
+            } 
+        })
+
     }
 
     fileInputChange(e) {
@@ -227,14 +280,21 @@ class Photo {
         return this._getCanvas(this.THUMBNAIL_SIZE)
     }
 
-    getUploaData() {
-        return this._getCanvas(this.UPLOAD_SIZE).toDataURL(this.file.type);
+    getUploadData() {
+        var fileType = this.file.type;
+        return this._getCanvas(this.UPLOAD_SIZE).then( canvas => {
+            return new Promise( (resolve) => {
+                canvas.toBlob(resolve, fileType)
+            }) 
+        })
     }
 }
 
 
 
-
+/*
+ * Initialize photo conllection on window load event
+ */
 
 (() => {
     window.addEventListener('load', () => {
@@ -243,6 +303,15 @@ class Photo {
         } else {
             console.log("File upload is not supported!");
             $('#foto').html("<div class='alert alert-warning'>Captura de imagenes no soportada en este dispositivo</div>")
+            $('#formPedido').on("submit", (event) => {
+                event.preventDefault()
+                validateConfirmSumbit(event.currentTargeet, result => {
+                    if (result) {
+                        event.currentTargeet.submit();
+                    }
+                })
+            })
         }
     });
 })();
+

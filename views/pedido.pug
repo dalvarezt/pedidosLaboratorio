@@ -1,12 +1,17 @@
 extends layout
-
+    
 block content
     include navbar.pug
+    
     script(src="/javascripts/pedido.js")
     main(class="flex-shrink-0", role="main")
         div(class="container")
             h2.mt-2 Nueva Orden de Ex&aacute;menes
             form(name="pedido" method="POST" action="/pedido" id="formPedido").mb-5.needs-validation
+                -//var idPedido= idPedido
+                input(type="hidden" name="pedido.id" value= idPedido)
+                input(type="hidden" name="pedido.nombreDoctor" value= doctorName)
+                input(type="hidden" name="pedido.emailDoctor" valure= doctorEmail)
                 h3.mt-2 Datos del paciente
                 .form-row.mb-2
                     .col
@@ -46,12 +51,13 @@ block content
                             onclick="toggleNavs('imagen')"
                             id="nav_imagen"
                         ).nav-link Imagen
-                    li.nav-item
-                        a(
-                            href="#"
-                            onclick="toggleNavs('foto')"
-                            id="nav_foto"
-                        ).nav-link Capturar Fotografía
+                    if isMobile
+                        li.nav-item
+                            a(
+                                href="#"
+                                onclick="toggleNavs('foto')"
+                                id="nav_foto"
+                            ).nav-link Capturar Fotografía
                     
 
                 div(class="acordion" id="laboratorio")
@@ -61,9 +67,8 @@ block content
                 div(class="container" id="imagen")
                     p Examenes de imagen
                 div(id="foto").container
-                    .form-row
-                        .col
-                            input(type="image" accept="image/*" capture="environment" id="imageOrden")
+                    include photoCapture.pug
+                        
                 
                 .fixed-bottom
                     .d-flex.flex-row-reverse.bg-light
