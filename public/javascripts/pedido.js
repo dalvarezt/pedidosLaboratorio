@@ -82,7 +82,7 @@ class PhotoCollection {
                         let request = new XMLHttpRequest();
                         request.addEventListener("load", (e) =>{
                             //TODO: handle status other than 200 as errors
-                            window.location.replace("/home")
+                            window.location.replace("./home")
                         })
                         request.addEventListener("error",(e) => {
                             $('#uploadingModal').modal('hide')

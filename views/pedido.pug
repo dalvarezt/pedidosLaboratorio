@@ -7,7 +7,7 @@ block content
     main(class="flex-shrink-0", role="main")
         div(class="container")
             h2.mt-2 Nueva Orden de Ex&aacute;menes
-            form(name="pedido" method="POST" action="/pedido" id="formPedido").mb-5.needs-validation
+            form(name="pedido" method="POST" action="/webapp/pedido" id="formPedido").mb-5.needs-validation
                 -//var idPedido= idPedido
                 input(type="hidden" name="pedido.id" value= idPedido)
                 input(type="hidden" name="pedido.nombreDoctor" value= doctorName)

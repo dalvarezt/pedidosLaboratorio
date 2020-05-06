@@ -1,0 +1,45 @@
+extends ../layout
+block append head
+    link(rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css")
+    script(src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js")
+    script.
+        const dtOptions = {year: 'numeric', month: 'numeric', day: 'numeric',hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true}
+        function rowFormatter(data) {
+            console.log("Formatter Called")
+            data.rows.forEach( row => {
+                var dt = new Date( Date.parse(row.value.timestamp) );
+                row.value.timestamp = new Intl.DateTimeFormat('es-419', dtOptions).format(dt);
+                row.value.estado = row.value.estado==="P" ? "Pendiente" : "Atendido";
+                row.value['orderLink'] = `<a href="/admin/abrirOrden?id=${row.id}">abrir orden</a>`;
+
+            });
+            console.log(data);
+            return data;
+        }
+block content
+    include ../navbar
+    main(role="main", class="flex-shrink-0")
+        .container
+            .row.content
+                table(
+                    data-toggle="table"
+                    data-url="/adminapi/orderList"
+                    data-pagination="true"
+                    data-total-field="total_rows"
+                    data-data-field="rows"
+                    data-side-pagination="server"
+                    data-search="false"
+                    data-sort-name="Fecha"
+                    data-sort-order="desc"
+                    data-query-params-type=""
+                    data-response-handler="rowFormatter"
+                )
+                    thead
+                        tr
+                            th(data-field="value.timestamp" data-sortable="true") Fecha
+                            th(data-field="value.nombreDoctor" data-sortable="true") Médico
+                            th(data-field="value.nombrePaciente" data-sortable="true") Paciente
+                            th(data-field="value.estado" data-sortable="true") Estado
+                            th(data-field="value.orderLink" data-sortable="false") link
+
+
