@@ -47,6 +47,21 @@ router.get('/admin/abrirOrden', (req, res)=> {
   }
 })
 
+router.get('/admin/changeOrderStatus', (req,res)=>{
+  var id = req.query.id;
+  var user = res.locals.userName;
+  adminApi.changeOrderStatus(id, user).then( body=> {
+    console.debug("Modified doc", body);
+    res.json(body)
+  }).catch(err => {
+    res.status(500).send(err.message)
+  })
+})
+//TODO: Remove this 
+router.get('/test/pedido', (req, res) => {
+  res.render('pedido')
+})
+
 router.get('/adminapi/orderList', adminApi.getOrders)
 router.get('/adminapi/getAttachment', adminApi.getOrderAttachment)
 

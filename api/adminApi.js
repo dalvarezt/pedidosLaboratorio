@@ -78,10 +78,17 @@ class AdminApi {
      * Changes the status of an order from pending to ready
      * @param {string} id The document id of the order
      * @param {string} user The id of the user executing the action
-     * @param {boolean} status true=>ready, false=>pending
      */
-    changeOrderStatus(id, user, status) {
-
+    async changeOrderStatus(id, user) {
+        const db = await DB.getConnection();
+        return db.get(id).then(doc => {
+            doc.pedido.status = (doc.pedido.status=="P" ? "A" : "P");
+            doc.pedido['actualizadoPor'] = user;
+            doc.pedido['fechaActualizacion'] = new Date().toJSON();
+            return db.insert(doc).then(body => {
+                return body;
+            }).catch(err => {return Promise.reject(err)});
+        }).catch( err => {return Promise.reject(err)});
     }
 
     /**

@@ -1,43 +1,74 @@
 extends ../layout
+block append head
+    script.
+        function changeStatus() {
+            console.log("changing status")
+            $('#bt_changeStatus').attr("disabled", true);
+            $.ajax({
+                method:"GET",
+                url:"/admin/changeOrderStatus",
+                data:{
+                    id:"#{pedido._id}"
+                }
+            }).done( (res) => {
+                location.reload()
+            })
+        }
 
 block content
   include ../navbar.pug
   main(role="main", class="flex-shrink-0")
     .container.container-sm
         .row
-            .col
-                h1 Resumen de la Orden
-                h2 Datos del Paciente
+            .col-8
+                h1.text-center Detalle de la Orden
         .row
-            .col-2
-                b Nombre del paciente
-            .col-4
-                = pedido.paciente.nombre
+            .col-8.border-bottom
+                h3 Datos del Paciente
         .row
-            .col-2
-                b Edad
-            .col-2
-                = pedido.paciente.edad
-            .col-2
-                b Sexo
-            .col-2
-                if pedido.paciente.sexo=="F"
-                    | Femenino
-                else
-                    | Masculino
+            .col-4.border-bottom
+                dl
+                    dt Nombre
+                    dd= pedido.paciente.nombre
+                    dt Edad
+                    dd= pedido.paciente.edad
+                    dt Sexo
+                    dl
+                        if pedido.paciente.sexo=="F"
+                            | Femenino
+                        else
+                            | Masculino
+            .col-4.border-bottom
+                dl
+                    dt Teléfono
+                    dl= pedido.paciente.telefono
+                    dt Correo electrónico
+                    dl= pedido.paciente.email
+        .row.mt-2
+            .col-8.border-bottom
+                h3 Estado de la Orden
         .row
-            .col-2
-                b Teléfono
-            .col-2
-                = pedido.paciente.telefono
-            .col-2
-                b Correo electrónico
-            .col-2
-                = pedido.paciente.email
+            .col-8
+                dl 
+                    dt Solicitante
+                    dd= pedido.pedido.nombreDoctor
+                    dt E-mail solicitante
+                    dd= pedido.pedido.emailDoctor
+                    dt Fecha creación
+                    -const dtOptions = {year: 'numeric', month: 'short', day: 'numeric',hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true, timeZone:'America/Guayaquil'}
+                    dd= Intl.DateTimeFormat('es-419', dtOptions).format(Date.parse(pedido.pedido.timestamp))
+                    dt Estado
+                    dd(id="pedidoEstado")= pedido.pedido.status=='P'?"Pendiente":"Atendido"
+                        button.btn.btn-inline.btn-primary.ml-3(id="bt_changeStatus" onclick="changeStatus()") Cambiar Estado
+                    if pedido.pedido.fechaActualizacion
+                        dt Fecha última actualización
+                        dd(id="fechaActualizacion")= Intl.DateTimeFormat('es-419', dtOptions).format(Date.parse(pedido.pedido.fechaActualizacion))
+                        dt Actualizado por
+                        dd(id="actualizadoPor")= pedido.pedido.actualizadoPor
         if pedido.lab
             .row
                 .col-8
-                    h3 Exámenes de Laboratorio
+                    h4 Exámenes de Laboratorio
             each val, key in pedido.lab
                 .row
                     .col-8
@@ -51,19 +82,20 @@ block content
 
         if pedido._attachments
             .row
-                .col
-                    h2 Fotografías Capturadas por el Médico
-            - var n=1
-            each val, key in pedido._attachments
-                .row
-                    .col
-                        .media
-                            i.material-icons attach_file
-                            .media-body
-                                a(
-                                    href=`/adminapi/getAttachment?id=${pedido._id}&attachment=${key}` 
-                                    target="_blank"
-                                ) Ver imagen #{n++}
+                .col-8
+                    h4 Fotografías Capturadas por el Médico
+            .row
+                - var n=1
+                each val, key in pedido._attachments
+
+                        .col
+                            .media
+                                i.material-icons attach_file
+                                .media-body
+                                    a(
+                                        href=`/adminapi/getAttachment?id=${pedido._id}&attachment=${key}` 
+                                        target="_blank"
+                                    ) Ver imagen #{n++}
         .row
             .col
             
