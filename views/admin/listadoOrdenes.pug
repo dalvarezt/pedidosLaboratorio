@@ -3,7 +3,8 @@ block append head
     link(rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css")
     script(src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js")
     script.
-        const dtOptions = {year: 'numeric', month: 'numeric', day: 'numeric',hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true}
+        const dtOptions = {year: 'numeric', month: 'short', day: 'numeric',hour: 'numeric', 
+            minute: 'numeric', second: 'numeric', hour12: true, timeZone:'America/Guayaquil'}
         function rowFormatter(data) {
             console.log("Formatter Called")
             data.rows.forEach( row => {
@@ -20,6 +21,8 @@ block content
     include ../navbar
     main(role="main", class="flex-shrink-0")
         .container
+            .row-content
+                h1 Listado de Órdenes
             .row.content
                 table(
                     data-toggle="table"
