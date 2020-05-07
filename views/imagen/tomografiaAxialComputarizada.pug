@@ -16,4 +16,74 @@ div(class="card")
     div(id="imagenTAC" class="collapse hide" aria-labelledby="imagenTACTitulo" data-parent="#imagen")
         div(class="card-body")
             .row
-                //- TODO: @dalvarezt 
+                .col-2 &nbsp;
+                .col-2.text-center
+                    b Simple
+                .col-2.text-center
+                    b Contrastada
+                .col-2 &nbsp;
+                .col-2.text-center
+                    b Simple
+                .col-2.text-center
+                    b Contrastada
+                             
+            .row
+                .col-2
+                    label(for="imagenTACCraneoSimple").text-dark Cráneo
+                    input(type="hidden" id="imagenTACCraneo" name="imagen.tac")
+                .col-2.text-center
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox"
+                                id="imagenTACCraneo_simple"
+                                value="Cráneo - Simple"
+                            )
+                .col-2.text-center
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox"
+                                id="imagenTACCraneo_compuesta"
+                                value="Cráneo - Compuesta"
+                            )
+
+script.
+    function simpleChange(event) {
+        var elemId = event.target.id.split("_")[0]
+        if (event.target.checked) {
+            $(`#${elemId}`).val(event.target.value);
+        } else {
+            $(`#${elemId}`).val('');
+        }
+
+    }
+    function compuestaChange(event) {
+        var elemId = event.target.id.split("_")[0]
+        if (event.target.checked) {
+            $(`#${elemId}_simple`)
+                .attr("disabled", true)
+                .prop("checked", true)
+                
+            $(`#${elemId}`).val(event.target.value)
+        } else {
+            $(`#${elemId}_simple`)
+                .removeAttr("disabled")
+                .prop("checked", false)
+            $(`#${elemId}`).val('') 
+        }
+
+    }
+    (()=>{
+        window.addEventListener('load', ()=>{
+            var cboxes = $("#imagenTAC").find(":checkbox");
+            cboxes.each( (idx, cb)=> {
+                var s_id = cb.id.split("_")
+                if(s_id[1]=="simple") {
+                    cb.addEventListener("change", simpleChange)
+                } else {
+                    cb.addEventListener("change", compuestaChange)
+                }
+            })
+        })
+    })();
