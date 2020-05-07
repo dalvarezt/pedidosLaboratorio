@@ -1,0 +1,72 @@
+extends ../layout
+
+block content
+  include ../navbar.pug
+  main(role="main", class="flex-shrink-0")
+    .container.container-sm
+        .row
+            .col
+                h1 Resumen de la Orden
+                h2 Datos del Paciente
+        .row
+            .col-2
+                b Nombre del paciente
+            .col-4
+                = pedido.paciente.nombre
+        .row
+            .col-2
+                b Edad
+            .col-2
+                = pedido.paciente.edad
+            .col-2
+                b Sexo
+            .col-2
+                if pedido.paciente.sexo=="F"
+                    | Femenino
+                else
+                    | Masculino
+        .row
+            .col-2
+                b Teléfono
+            .col-2
+                = pedido.paciente.telefono
+            .col-2
+                b Correo electrónico
+            .col-2
+                = pedido.paciente.email
+        if pedido.lab
+            .row
+                .col-8
+                    h3 Exámenes de Laboratorio
+            each val, key in pedido.lab
+                .row
+                    .col-8
+                        ul.ost-group
+                            li.list-group-item.active= key.toUpperCase()
+                            if val instanceof Array
+                                each item in val
+                                    li.list-group-item= item
+                            else 
+                                li.list-group-item= val
+
+        if pedido._attachments
+            .row
+                .col
+                    h2 Fotografías Capturadas por el Médico
+            - var n=1
+            each val, key in pedido._attachments
+                .row
+                    .col
+                        .media
+                            i.material-icons attach_file
+                            .media-body
+                                a(
+                                    href=`/adminapi/getAttachment?id=${pedido._id}&attachment=${key}` 
+                                    target="_blank"
+                                ) Ver imagen #{n++}
+        .row
+            .col
+            
+
+
+        

@@ -37,6 +37,7 @@ function postOrder(req, res) {
         var doc = {};
         for (var k in req.body) {
             if (k != "photoOrder" && req.body[k] != "") {
+                console.debug(k, req.body[k])
                 var tags = k.split(".")
                 if (!doc[tags[0]]) {
                     doc[tags[0]] = {};
@@ -45,6 +46,9 @@ function postOrder(req, res) {
 
             }
         }
+        // computed fields
+        doc.pedido['timestamp'] = new Date().toJSON();
+        doc.pedido['status'] = 'P';
         db.insert(doc).then(body => {
             console.log(body);
             if (req.files) {
@@ -61,7 +65,7 @@ function postOrder(req, res) {
                 })
             }
 
-            if (req.url == "/pedido") {
+            if (req.url == "/webapp/pedido") {
                 res.render("home", {'alertMessage':'Orden procesada correctamente, gracias por preferirnos'});
             } else {
                 res.status(200).send("OK");

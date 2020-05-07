@@ -1,62 +1,54 @@
 var express = require('express');
-var passport = require('passport');
-const WebAppStrategy = require('ibmcloud-appid').WebAppStrategy
-const userProfileManager = require("ibmcloud-appid").UserProfileManager;
 var router = express.Router();
 const postOrder = require('../api/submitOrder').postOrder;
 const uuid = require('../util/uuid').getUUID;
+const adminApi = require('../api/adminApi').adminApi;
 //TODO: set limits and security features of multer
 const multer = require('multer');
 var upload = multer({ dest: 'uploads/' , limits:{fileSize:2*Math.pow(1024,2)}})
 
-userProfileManager.init({
-	tenantId: process.env["TENANT_ID"],
-	clientId: process.env.CLIENT_ID,
-	secret: process.env.APPID_SECRET,
-	oauthServerUrl: process.env.OAUTH_SERVER_URL,
-  redirectUri: process.env.SERVER_URL + "/login",
-  profilesUrl:process.env.APPID_PROFILES_URL
-});
 
-var auth=passport.authenticate(WebAppStrategy.STRATEGY_NAME);
-
-/* TODO: delete this on final code. Used to override when local /
-auth= function(req, res, next) {
-  next();
-} // */
-
-/* GET home page. */
+/* GET start page. */
 router.get('/', (req,res)=>{
   res.render('index');
 })
-router.get('/home', auth, function(req, res, next) {
-  res.render('home', { title: 'Órdenes de Exámenes Médicos' });
-});
 
-router.get('/pedido', auth, function(req,res,next) {
-  var accessToken = req.session[WebAppStrategy.AUTH_CONTEXT].accessToken;
-  userProfileManager.getUserInfo(accessToken).then((att) => {
-    //console.debug("user attributes", att);
-    res.render('pedido', { idPedido: uuid(), doctorName: att.name, doctorEmail: att.email })
-  }).catch(err => {
-    console.error(err)
-    res.render('pedido', { idPedido: uuid() })
-  });
-  
+
+router.get('/favicon.ico', express.static("/images/favicon.ico"))
+
+router.get("/webapp/home", (req, res) => {
+  res.render('home');
 })
 
-router.post(
-  '/pedido', 
-  auth,
-  upload.none(), 
-  postOrder
-)
+router.get("/webapp/pedido", (req, res) => {
+  res.render('pedido', {
+    idPedido:uuid(), 
+    doctorName:res.locals.userName, 
+    doctorEmail:res.locals.userEmail
+  })
+})
+router.post("/webapp/pedido", upload.none(), postOrder)
+router.post("/webapp/pedidoPhotos", upload.array('photoOrder,4'), postOrder)
 
-router.post(
-  '/pedidoPhotos', 
-  auth, 
-  upload.array('photoOrder', 4), 
-  postOrder
-)
+router.get("/admin/listadoOrdenes", (req, res) => {
+  res.render('admin/listadoOrdenes')
+});
+
+router.get('/admin/abrirOrden', (req, res)=> {
+  if (req.query.id) {
+    adminApi.getOrderDetails(req.query.id).then(data => {
+      res.render("admin/resumenPedido", {pedido:data})
+    }).catch( err => {
+      err.status=500
+      throw err;
+    })
+  } else {
+    throw new Error("Missing parameter");
+  }
+})
+
+router.get('/adminapi/orderList', adminApi.getOrders)
+router.get('/adminapi/getAttachment', adminApi.getOrderAttachment)
+
 
 module.exports = router;

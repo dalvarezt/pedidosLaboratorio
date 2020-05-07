@@ -15,8 +15,15 @@ block content
             a(
               href="#"
               class="btn btn-primary btn-lg active"
+              onclick="bootbox.alert('Gracias por su paciencia: página en construcción')"
             ) Resultados
             a(
               href="#"
               class="btn btn-primary btn-lg active"
+              onclick="bootbox.alert('Gracias por su paciencia: página en construcción')"
             ) Mis pacientes
+            if isAdmin
+              a(
+                href="/admin/listadoOrdenes"
+                class="btn btn-primary btn-lg active"
+              ) Administración
