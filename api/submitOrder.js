@@ -52,7 +52,7 @@ function postOrder(req, res) {
                             fdata.push(v)
                         }
                     }
-                    if (fdata.lenght>0) {
+                    if (fdata.length>0) {
                         doc[tags[0]][tags[1]] = fdata
                     }
                 } else if (req.body[k]!=""){
