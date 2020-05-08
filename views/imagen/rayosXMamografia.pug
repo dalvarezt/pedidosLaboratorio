@@ -12,8 +12,126 @@ div(class="card")
                 span(data-toggle="collapse" data-target="#imagenRayosX").arrow-toggle.collapsed
                     i.material-icons.icon-arrow-up expand_more
                     i.material-icons.icon-arrow-down expand_less
-                | Rayos X simples/contrastados - Mamografia (Digitalizados)
+                | Rayos X simples/contrastados <br> - Mamografia (Digitalizados)
     div(id="imagenRayosX" class="collapse hide" aria-labelledby="imagenRayosXTitulo" data-parent="#imagen")
         div(class="card-body")
             .row
-                //- TODO: @IsabelNaranjo
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenRayosXMamografiaBilateral" 
+                                name="imagen.rayosx" 
+                                value="Mamografía bilateral"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenRayosXMamografiaBilateral"
+                            ) Mamografía bilateral
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenRayosXFocalizacionMamaria" 
+                                name="imagen.rayosx" 
+                                value="Focalización mamaria"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenRayosXFocalizacionMamaria"
+                            ) Focalización mamaria
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenRayosXMamografiaUnilateral" 
+                                name="imagen.rayosx" 
+                                value="Mamografía unilateral"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenRayosXMamografiaUnilateral"
+                            ) Mamografía unilateral
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenRayosXMagnificacionMamaria" 
+                                name="imagen.rayosx" 
+                                value="Magnificación mamaria"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenRayosXMagnificacionMamaria"
+                            ) Magnificación mamaria
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenRayosXUrogramaExcretor" 
+                                name="imagen.rayosx" 
+                                value="Urograma excretor"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenRayosXUrogramaExcretor"
+                            ) Urograma excretor
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenRayosXHisterosalpingografia" 
+                                name="imagen.rayosx" 
+                                value="Histerosalpingografía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenRayosXHisterosalpingografia"
+                            ) Histerosalpingografía
+            row
+                .col-md
+                    .form-group
+                        input(type="hidden" id="imagenRayosXOtros", name="imagen.rayosx")
+                        label(for="imagenRayosXOtrosRX") Rayos X de:
+                        textarea(id="imagenRayosXOtrosRX").form-control
+                    .form-group
+                        label(for="imagenRayosXOtrosHC") Datos de historia clínica:
+                        textarea(id="imagenRayosXOtrosHC").form-control
+                    .form-group
+                        label(for="imagenRayosXOtrosDG") Diagnóstico presuntivo:
+                        textarea(id="imagenRayosXOtrosDG").form-control
+                script. 
+                    function changeRx(e) {
+                        if (
+                            $('#imagenRayosXOtrosRX').val() != "" || 
+                            $('#imagenRayosXOtrosHC').val() != "" ||
+                            $('#imagenRayosXOtrosDG').val() != "" 
+                        ) {
+                            $('#imagenRayosXOtros').val(
+                                "Rayos X de: " + $('#imagenRayosXOtrosRX').val() + 
+                                " - Datos de historia clínica: "+ $('#imagenRayosXOtrosHC').val() +
+                                " - Diagnóstico presuntivo: " +  $('#imagenRayosXOtrosDG').val() 
+                            );
+                        } else {
+                            $('#imagenRayosXOtros').val("");
+                        }
+                    }
+                    window.addEventListener("load", ()=>{
+                        $('#imagenRayosXOtrosRX').bind("input cut paste", changeRx)
+                        $('#imagenRayosXOtrosHC').bind("input cut paste", changeRx)
+                        $('#imagenRayosXOtrosDG').bind("input cut paste", changeRx)
+                    })
