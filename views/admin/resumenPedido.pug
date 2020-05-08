@@ -79,6 +79,20 @@ block content
                                     li.list-group-item= item
                             else 
                                 li.list-group-item= val
+        if pedido.imagen
+            .row
+                .col-8
+                    h4 Imagen
+            each val, key in pedido.imagen
+                .row
+                    .col-8
+                        ul.ost-group
+                            li.list-group-item.active= key.toUpperCase()
+                            if val instanceof Array
+                                each item in val
+                                    li.list-group-item= item
+                            else 
+                                li.list-group-item= val
 
         if pedido._attachments
             .row
