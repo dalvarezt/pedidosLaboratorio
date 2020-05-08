@@ -28,7 +28,7 @@ router.get("/webapp/pedido", (req, res) => {
   })
 })
 router.post("/webapp/pedido", upload.none(), postOrder)
-router.post("/webapp/pedidoPhotos", upload.array('photoOrder,4'), postOrder)
+router.post("/webapp/pedidoPhotos", upload.array('photoOrder',4), postOrder)
 
 router.get("/admin/listadoOrdenes", (req, res) => {
   res.render('admin/listadoOrdenes')
