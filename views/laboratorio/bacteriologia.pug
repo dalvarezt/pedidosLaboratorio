@@ -33,7 +33,8 @@ div(class="card")
                                 input(
                                     class="form-control w-200 collapse" 
                                     id="labBactereologiaMuestraDeTexto" 
-                                    type="text" 
+                                    type="text"
+                                    onchange="$('#labBactereologiaMuestraDe').val('Muestra de - ' + this.value)"                                     
                                 )                            
                  .col-sm
                      .checkbox
@@ -50,28 +51,29 @@ div(class="card")
                      .checkbox
                          label
                             input( type="checkbox" checked=false id="labBactereologiaFresco" name="lab.bactereologia" value="Fresco") 
-                            label(class="text-dark" for="labBactereologiaFresco") Fresco
-            
+                            label(class="text-dark" for="labBactereologiaFresco") Fresco   
             .row
                  .col-sm
-                     .checkbox
-                        label
-                            input( type="checkbox" checked=false id="labBactereologiaBAAR" name="lab.bactereologia" value="BAAR") 
-                            label(class="text-dark" for="labBactereologiaBAAR" ) BAAR  _ DíasN°
-                            input(
-                                  type="checkbox"
-                                  id="labBactereologiaDíasN°"
-                                  data-toggle="collapse"
-                                  data-target="#labBactereologiaDíasN°Texto"
-                                  name="lab.bactereologia"
-                                )
-                            label(class="text-dark" for="labBactereologiaDíasN°") Días N°  
-                            .d-sm-inline-flex.ml-3  
-                                input(
-                                    class="form-control w-50 collapse" 
-                                    id="labBactereologiaDíasN°Texto" 
-                                    type="text" 
-                                )     
+                    .checkbox
+                         label                            
+                             input(
+                                type="checkbox" 
+                                checked=false 
+                                id="labBactereologíaBAAR"
+                                data-toggle="collapse"
+                                data-target="#labBactereologiaBAARDíasN"
+                                name="lab.Bactereologia"
+                                value="BAAR"
+                             ) 
+                             label(class="text-dark" for="laBactereologiaBAAR") BAAR
+                             label(class="text-dark" for="laBactereologiaBAAR") Días N°
+                             .d-sm-inline-flex.ml-3 
+                                 input(
+                                     class="form-control w-50 collapse" 
+                                     id="labBactereologiaBAARDíasN" 
+                                     type="text" 
+                                     onchange="$('#labBactereologiaBAAR').val('Curva de glucosa - ' + this.value)"
+                                 )                              
             .row                                 
                  .col-sm
                      .checkbox
@@ -97,23 +99,13 @@ div(class="card")
                                     id="labBactereologiaControlTratamientoTexto" 
                                     type="text" 
                                 )              
-            .row                                      
-                 .col-sm
-                     .checkbox
-                        label                            
-                            input(
-                                type="checkbox" 
-                                checked=false 
-                                id="labBactereologiaOtros"
-                                data-toggle="collapse"
-                                data-target="#labBactereologiaOtrosTexto"
-                                name="lab.bactereologia"
-                                value="Otros"
-                             ) 
-                            label(class="text-dark" for="labBactereologiaOtros") Otros
-                            .d-sm-inline-flex.ml-3
-                                input(
-                                    class="form-control w-150 collapse" 
-                                    id="labBactereologiaOtrosTexto" 
-                                    type="text" 
-                                )                            
+            .row
+                .col-md
+                    .form-group
+                        input(type="hidden" name="lab.bacteriologia" id="labBactereologiaOtros")
+                        label(class="text-dark" for="labBactereologiaOtros") Otros:
+                        input(
+                            type="text" 
+                            id="bactereologiaOtros"
+                            onchange="$('#labBactereologia').val('Otros: '+this.value)"
+                        ).form-control
