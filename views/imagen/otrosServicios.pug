@@ -16,4 +16,300 @@ div(class="card")
     div(id="imagenOtrosServicios" class="collapse hide" aria-labelledby="imagenOtrosServiciosTitulo" data-parent="#imagen")
         div(class="card-body")
             .row
-                //- TODO: @IsabelNaranjo 
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosElectrocardiograma" 
+                                name="imagen.otrosServicios"
+                                data-toggle="collapse"
+                                data-target="#collapseElectrocardiograma"
+                                value="Electrocardiograma"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosElectrocardiograma"
+                            ) Electrocardiograma
+                    .collapse.ml-4(id="collapseElectrocardiograma")
+                        .form-check.form-check-inline
+                            input(
+                                type="radio"
+                                name="ignore.electrocardiograma"
+                                id="imagenOtrosServiciosElectrocardiogramaCI"
+                                value="Electrocardiograma con interpretación"
+                                onchange="if(this.checked){ $('#imagenOtrosServiciosElectrocardiograma').val(this.value)}"
+                            ).form-check-input
+                            label(for="imagenOtrosServiciosElectrocardiogramaCI").form-check-label con interpretación
+                        .form-check.form-check-inline
+                            input(
+                                type="radio"
+                                name="ignore.electrocardiograma"
+                                id="imagenOtrosServiciosElectrocardiogramaSI"
+                                value="Electrocardiograma sin interpretación"
+                                onchange="if(this.checked){ $('#imagenOtrosServiciosElectrocardiograma').val(this.value)}"
+                            ).form-check-input
+                            label(for="imagenOtrosServiciosElectrocardiogramaSI").form-check-label sin interpretación
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosEspirometria" 
+                                name="imagen.otrosServicios"
+                                data-toggle="collapse"
+                                data-target="#collapseEspirometria"
+                                value="Espirometría"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosEspirometria"
+                            ) Espirometría
+                    .collapse.ml-4(id="collapseEspirometria")
+                        .form-check.form-check-inline
+                            input(
+                                type="radio"
+                                name="ignore.Espirometria"
+                                id="imagenOtrosServiciosEspirometriaCI"
+                                value="Espirometria con broncodilatador"
+                                onchange="if(this.checked){ $('#imagenOtrosServiciosEspirometria').val(this.value)}"
+                            ).form-check-input
+                            label(for="imagenOtrosServiciosEspirometriaCI").form-check-label con broncodilatador
+                        .form-check.form-check-inline
+                            input(
+                                type="radio"
+                                name="ignore.Espirometria"
+                                id="imagenOtrosServiciosEspirometriaSI"
+                                value="Espirometria sin broncodilatador"
+                                onchange="if(this.checked){ $('#imagenOtrosServiciosEspirometria').val(this.value)}"
+                            ).form-check-input
+                            label(for="imagenOtrosServiciosEspirometriaSI").form-check-label sin broncodilatador
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosAudiometria" 
+                                name="imagen.otrosServicios" 
+                                value="Audiometría"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosAudiometria"
+                            ) Audiometría (previa cita)
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosColposcopia" 
+                                name="imagen.otrosServicios" 
+                                value="Colposcopía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosColposcopia"
+                            ) Colposcopía
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosUrodinamia" 
+                                name="imagen.otrosServicios" 
+                                value="Urodinamia o flujometría"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosUrodinamia"
+                            ) Urodinamia o flujometría
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosBiopsiaPeneoscopia" 
+                                name="imagen.otrosServicios" 
+                                value="Biopsia de Peneoscopía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosBiopsiaPeneoscopia"
+                            ) Biopsia de Peneoscopía
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosElectroencefalograma" 
+                                name="imagen.otrosServicios" 
+                                value="Electroencefalograma"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosElectroencefalograma"
+                            ) Electroencefalograma
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosPeneoscopia" 
+                                name="imagen.otrosServicios" 
+                                value="Peneoscopía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosPeneoscopia"
+                            ) Peneoscopía
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosInyectologia" 
+                                name="imagen.otrosServicios" 
+                                value="Inyectologáa"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosInyectologia"
+                            ) Inyectología
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosMonitoreoSV" 
+                                name="imagen.otrosServicios" 
+                                value="Monitoreo de signos vitales"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosMonitoreoSV"
+                            ) Monitoreo de signos vitales
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosAudiometría" 
+                                name="imagen.otrosServicios" 
+                                value="Audiometría"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosAudiometría"
+                            ) Audiometría
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosColposcopia" 
+                                name="imagen.otrosServicios" 
+                                value="Colposcopía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosColposcopia"
+                            ) Colposcopía
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenOtrosServiciosElectromiografia" 
+                                name="imagen.otrosServicios"
+                                data-toggle="collapse"
+                                data-target="#collapseElectromiografia"
+                                value="Electromiografía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenOtrosServiciosElectromiografia"
+                            ) Electromiografía
+                    .collapse.ml-4(id="collapseElectromiografia")
+                        .form-check.form-check-inline
+                            input(
+                                type="radio"
+                                name="ignore.Electromiografia"
+                                id="imagenOtrosServiciosElectromiografia1m"
+                                value="Electromiografía 1 miembro"
+                                onchange="if(this.checked){ $('#imagenOtrosServiciosElectromiografia').val(this.value)}"
+                            ).form-check-input
+                            label(for="imagenOtrosServiciosElectromiografia1m").form-check-label 1 miembro
+                        .form-check.form-check-inline
+                            input(
+                                type="radio"
+                                name="ignore.Electromiografia"
+                                id="imagenOtrosServiciosElectromiografia2m"
+                                value="Electromiografía 2 miembros"
+                                onchange="if(this.checked){ $('#imagenOtrosServiciosElectromiografia').val(this.value)}"
+                            ).form-check-input
+                            label(for="imagenOtrosServiciosElectromiografia2m").form-check-label 2 miembros
+                        .form-check.form-check-inline
+                            input(
+                                type="radio"
+                                name="ignore.Electromiografia"
+                                id="imagenOtrosServiciosElectromiografia4m"
+                                value="Electromiografía 4 miembros"
+                                onchange="if(this.checked){ $('#imagenOtrosServiciosElectromiografia').val(this.value)}"
+                            ).form-check-input
+                            label(for="imagenOtrosServiciosElectromiografia4m").form-check-label 4 miembros
+            .row
+                .col-md
+                    .form-group
+                        input(
+                            type="hidden"
+                            name="imagen.otrosServicios"
+                            id="imagenOtrosServiciosOtros"
+                        )
+                        label(for="imagenOtrosServiciosHC") Datos de historia clínica:
+                        textarea(
+                            id="imagenOtrosServiciosHC"
+                        ).form-control
+                    .form-group
+                        label(for="imagenOtrosServiciosDG") Diagnóstico presuntivo:
+                        textarea(
+                            id="imagenOtrosServiciosDG"
+                        ).form-control
+                    script. 
+                        function imgOSChange(){
+                            if(
+                                $("#imagenOtrosServiciosHC").val() != "" ||
+                                $("#imagenOtrosServiciosDG").val() != ""
+                            ) {
+                                $("#imagenOtrosServiciosOtros").val(
+                                    "Datos de historia clínica: " + $("#imagenOtrosServiciosHC").val() +
+                                    " - Diagnóstico presuntivo: " + $("#imagenOtrosServiciosDG").val() 
+                                )
+                            } else {
+                                $("#imagenOtrosServiciosOtros").val("");
+                            }
+                        }
+                        window.addEventListener("load", ()=> {
+                            $("#imagenOtrosServiciosHC").bind("input cut paste", imgOSChange)
+                            $("#imagenOtrosServiciosDG").bind("input cut paste", imgOSChange)
+                        })
+            .row.mb-4 &nbsp;
+
