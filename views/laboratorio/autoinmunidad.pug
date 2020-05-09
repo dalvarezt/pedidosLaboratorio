@@ -83,53 +83,87 @@ div(class="card")
                             label(class="text-dark" for="labAutoinmunidadANCAS") ANCAS
             .row
                  .col-sm
-                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadAntifosfolípidos" name="lab.autoinmunidad" value="Antifosfolípidos")
-                            label(class="text-dark" for="labAutoinmunidadAntifosfolípidos") Antifosfolípidos
-                 .col-sm-2
                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadIgG" name="lab.autoinmunidad" value="IgG")
-                            label(class="text-dark" for="labAutoinmunidadIgG") IgG
-                 .col-sm 
-                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadIgM" name="lab.autoinmunidad" value="IgM")
-                            label(class="text-dark" for="labAutoinmunidadIgM") IgM  
-            .row
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labEMAntifosfolípidos"  
+                                data-toggle="collapse"
+                                data-target="#collapse-Antifosfolípidos"
+                            ) 
+                            label(for="labEMAntifosfolípidos").text-dark Antifosfolípidos
+                    .collapse.ml-4(id="collapse-Antifosfolípidos")
+                        label(for="labEMAntifosfolípidosIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labEMAntifosfolípidosIgG"
+                                name="lab.Antifosfolípidos"
+                                value="AntifosfolípidosIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labEMAntifosfolípidosIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labEMAntifosfolípidosIgM"
+                                name="lab.Antifosfolípidos"
+                                value="Antifosfolípidos IgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;                           
                  .col-sm
-                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadAnticardiolipinas" name="lab.autoinmunidad" value="Anticardiolipinas")
-                            label(class="text-dark" for="labAutoinmunidadAnticardiolipinas") Anticardiolipinas
-                 .col-sm-2
                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadIgG" name="lab.autoinmunidad" value="IgG")
-                            label(class="text-dark" for="labAutoinmunidadIgG") IgG
-                 .col-sm 
-                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadIgM" name="lab.autoinmunidad" value="IgM")
-                            label(class="text-dark" for="labAutoinmunidadIgM") IgM                
-            .row
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labEMAnticardiolipinas"  
+                                data-toggle="collapse"
+                                data-target="#collapse-Anticardiolipinas"
+                            ) 
+                            label(for="labEMAnticardiolipinas").text-dark Anticardiolipinas
+                    .collapse.ml-4(id="collapse-Anticardiolipinas")
+                        label(for="labEMAnticardiolipinasIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labEMAnticardiolipinasIgG"
+                                name="lab.Anticardiolipinas"
+                                value="AnticardiolipinasIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labEMAnticardiolipinasIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labEMAnticardiolipinasIgM"
+                                name="lab.Anticardiolipinas"
+                                value="Anticardiolipinas IgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;                           
+            .row     
                  .col-sm
-                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadANTIB2GP1" name="lab.autoinmunidad" value="ANTI B2GP1")
-                            label(class="text-dark" for="labAutoinmunidadANTIB2GP1") ANTI B2GP1
-                 .col-sm-2
                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadIgG" name="lab.autoinmunidad" value="IgG")
-                            label(class="text-dark" for="labAutoinmunidadIgG") IgG
-                 .col-sm 
-                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labAutoinmunidadIgM" name="lab.autoinmunidad" value="IgM")
-                            label(class="text-dark" for="labAutoinmunidadIgM") IgM
-            .row
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labEMANTIB2GP1"  
+                                data-toggle="collapse"
+                                data-target="#collapse-ANTIB2GP1"
+                            ) 
+                            label(for="labEMANTIB2GP1").text-dark ANTIB2GP1
+                    .collapse.ml-4(id="collapse-ANTIB2GP1")
+                        label(for="labEMANTIB2GP1IgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labEMANTIB2GP1IgG"
+                                name="lab.ANTIB2GP1"
+                                value="ANTIB2GP1IgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labEMANTIB2GP1IgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labEMANTIB2GP1IgM"
+                                name="lab.ANTIB2GP1"
+                                value="ANTIB2GP1 IgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;                           
                  .col-sm
                      .checkbox
                          label
