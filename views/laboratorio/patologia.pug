@@ -15,5 +15,68 @@ div(class="card")
                 | Patología
     div(id="labPatologia" class="collapse hide" aria-labelledby="labPatologiaTitulo" data-parent="#laboratorio")
         div(class="card-body")
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labPatologiaPapTest" name="lab.patologia" value="Pap - test") 
+                            label(class="text-dark" for="labPatologiaPapTest") Pap - test
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labPatologiaEstudioHistopatológico" name="lab.patologia" value="Estudio histopatológico") 
+                            label(class="text-dark" for="labPatologiaEstudioHistopatológico") Estudio histopatológico
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labPatologiaEstudioCitológico" name="lab.patologia" value="Estudio citológico") 
+                            label(class="text-dark" for="labPatologiaEstudioCitológico") Estudio citológico  
+                 .col-sm
+                     .checkbox
+                        label                            
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="labPatologiaMuestras"
+                                data-toggle="collapse"
+                                data-target="#labPatologiaMuestrasTexto"
+                                name="lab.patologia"
+                                value="Muestras:"
+                             ) 
+                            label(class="text-dark" for="labBactereologiaMuestras") Muestras
+                            .d-sm-inline-flex.ml-3
+                                input(
+                                    class="form-control w-300 collapse" 
+                                    id="labPatologiaMuestrasTexto" 
+                                    type="text"
+                                    onchange="$('#labPatologiaMuestras').val('Muestra de - ' + this.value)"                                     
+                                )                            
             .row
-                //- TODO: @IsabelNaranjo 
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labPLHPVInvestigaciónPCR"  
+                                data-toggle="collapse"
+                                data-target="#collapse-HPVInvestigaciónPCR"
+                            ) 
+                            label(for="labPLHPVInvestigaciónPCR").text-dark HPV Investigación por PCR:
+                    .collapse.ml-4(id="collapse-HPVInvestigaciónPCR")
+                        label(for="labPLHPVInvestigaciónPCRAltoRiesgo").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labPLHPVInvestigaciónPCRAltoRiesgo"
+                                name="lab.HPVInvestigaciónPCR"
+                                value="HPV Investigación por PCR Alto Riesgo (14 subtipos)"
+                            )
+                            | Alto Riesgo (14 subtipos)&nbsp;
+                        label(for="labPLHPVInvestigaciónPCRTotal").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labPLHPVInvestigaciónPCRTotal"
+                                name="lab.HPVInvestigaciónPCR"
+                                value="HPVInvestigación por PCR Total (45 subtipos)"
+                            ).checkbox-inline
+                            | TOTAL (45subtipos) &nbsp;  
