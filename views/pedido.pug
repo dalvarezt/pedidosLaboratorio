@@ -60,7 +60,7 @@ block content
                             ).nav-link Capturar Fotografía
                     
 
-                div(class="acordion" id="laboratorio")
+                .acordion.mb5(id="laboratorio")
                     include laboratorio/hematologia.pug
                     include laboratorio/coagulacion.pug
                     include laboratorio/quimicaSanguinea.pug
@@ -76,7 +76,7 @@ block content
                     include laboratorio/patologia.pug 
                     include laboratorio/seroinmunologia.pug 
                     include laboratorio/perfiles.pug 
-                div(class="acordion" id="imagen")
+                .acordion.mb5(id="imagen")
                     include imagen/tomografiaAxialComputarizada.pug 
                     include imagen/ecografiaMedica.pug 
                     include imagen/rayosXMamografia.pug 
@@ -84,9 +84,9 @@ block content
                     include imagen/densitometriaPediatrica.pug 
                     include imagen/endoscopiaDigestiva.pug 
                     include imagen/otrosServicios.pug 
-                div(id="foto").container
+                .acordion.mb5(id="foto")
                     include photoCapture.pug
-                        
+                .row.mb-6 &nbsp;        
                 
                 .footer.fixed-bottom
                     .d-flex.flex-row-reverse.bg-light
