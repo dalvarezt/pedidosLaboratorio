@@ -28,7 +28,7 @@ router.get("/webapp/pedido", (req, res) => {
   })
 })
 router.post("/webapp/pedido", upload.none(), postOrder)
-router.post("/webapp/pedidoPhotos", upload.array('photoOrder,4'), postOrder)
+router.post("/webapp/pedidoPhotos", upload.array('photoOrder',4), postOrder)
 
 router.get("/admin/listadoOrdenes", (req, res) => {
   res.render('admin/listadoOrdenes')
@@ -45,6 +45,21 @@ router.get('/admin/abrirOrden', (req, res)=> {
   } else {
     throw new Error("Missing parameter");
   }
+})
+
+router.get('/admin/changeOrderStatus', (req,res)=>{
+  var id = req.query.id;
+  var user = res.locals.userName;
+  adminApi.changeOrderStatus(id, user).then( body=> {
+    console.debug("Modified doc", body);
+    res.json(body)
+  }).catch(err => {
+    res.status(500).send(err.message)
+  })
+})
+//TODO: Remove this 
+router.get('/test/pedido', (req, res) => {
+  res.render('pedido')
 })
 
 router.get('/adminapi/orderList', adminApi.getOrders)

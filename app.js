@@ -28,12 +28,12 @@ app.use(session({
 }))
 
 userProfileManager.init({
-	tenantId: process.env["TENANT_ID"],
-	clientId: process.env.CLIENT_ID,
-	secret: process.env.APPID_SECRET,
-	oauthServerUrl: process.env.OAUTH_SERVER_URL,
+  tenantId: process.env["TENANT_ID"],
+  clientId: process.env.CLIENT_ID,
+  secret: process.env.APPID_SECRET,
+  oauthServerUrl: process.env.OAUTH_SERVER_URL,
   redirectUri: process.env.SERVER_URL + "/login",
-  profilesUrl:process.env.APPID_PROFILES_URL
+  profilesUrl: process.env.APPID_PROFILES_URL
 });
 
 app.use(passport.initialize());
@@ -61,21 +61,29 @@ passport.deserializeUser(function (obj, cb) {
 app.get("/webapp/*", passport.authenticate(WebAppStrategy.STRATEGY_NAME),
   (req, res, next) => {
     var accessToken = req.session[WebAppStrategy.AUTH_CONTEXT].accessToken;
-    userProfileManager.getUserInfo(accessToken).then((uInf) => { 
+    userProfileManager.getUserInfo(accessToken).then((uInf) => {
       res.locals.userName = uInf.name;
       res.locals.userEmail = uInf.email;
       res.locals.isMobile = req.get('User-Agent')
-      .match(/(Android)|(iPhone)|(Windows Phone (OS 7|8.0))|(XBLWP)|(ZuneWP)|(w(eb)?OSBrowser)|(webOS)|(Kindle\/(1.0|2.0|2.5|3.0))/);
+        .match(/(Android)|(iPhone)|(Windows Phone (OS 7|8.0))|(XBLWP)|(ZuneWP)|(w(eb)?OSBrowser)|(webOS)|(Kindle\/(1.0|2.0|2.5|3.0))/);
       res.locals.isAdmin = WebAppStrategy.hasScope(req, "admin")
       next();
-    }).catch( err => { throw err})
+    }).catch(err => { throw err })
   }
 )
 app.post("/webapp/*", passport.authenticate(WebAppStrategy.STRATEGY_NAME))
 
 app.get("/admin/*", passport.authenticate(WebAppStrategy.STRATEGY_NAME), (req, res, next) => {
+  var accessToken = req.session[WebAppStrategy.AUTH_CONTEXT].accessToken;
   if (WebAppStrategy.hasScope(req, "admin")) {
-    next();
+    userProfileManager.getUserInfo(accessToken).then((uInf) => {
+      res.locals.userName = uInf.name;
+      res.locals.userEmail = uInf.email;
+      res.locals.isMobile = req.get('User-Agent')
+        .match(/(Android)|(iPhone)|(Windows Phone (OS 7|8.0))|(XBLWP)|(ZuneWP)|(w(eb)?OSBrowser)|(webOS)|(Kindle\/(1.0|2.0|2.5|3.0))/);
+      res.locals.isAdmin = true;
+      next();
+    }).catch(err => { throw err })
   } else {
     err = new Error("Insufficient access rights");
     err.status = 401

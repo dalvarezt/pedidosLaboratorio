@@ -16,4 +16,754 @@ div(class="card")
     div(id="imagenTAC" class="collapse hide" aria-labelledby="imagenTACTitulo" data-parent="#imagen")
         div(class="card-body")
             .row
-                //- TODO: @dalvarezt 
+                .col-md
+                    .row
+                        .col &nbsp;
+                        .col.text-center
+                            b Simple
+                        .col.text-center
+                            b Contrastada
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACCraneoSimple").text-dark Cráneo
+                            input(type="hidden" id="imagenTACCraneo" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCraneo_simple"
+                                        value="Cráneo - Simple"
+                                    )
+                                    .d-none Cráneo - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCraneo_compuesta"
+                                        value="Cráneo - Compuesta"
+                                    )
+                                    .d-none Cráneo - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACSenosParanasalesSimple").text-dark Senos Paranasales
+                            input(type="hidden" id="imagenTACSenosParanasales" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACSenosParanasales_simple"
+                                        value="Senos Paranasales - Simple"
+                                    )
+                                    .d-none Senos Paranasales - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACSenosParanasales_compuesta"
+                                        value="Senos Paranasales - Compuesta"
+                                    )
+                                    .d-none Senos Paranasales - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACOrbitasSimple").text-dark Órbitas
+                            input(type="hidden" id="imagenTACOrbitas" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACOrbitas_simple"
+                                        value="Órbitas - Simple"
+                                    )
+                                    .d-none Órbitas - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACOrbitas_compuesta"
+                                        value="Órbitas - Compuesta"
+                                    )
+                                    .d-none Órbitas - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACSillaTurcaSimple").text-dark Silla Turca (Hipófisis)
+                            input(type="hidden" id="imagenTACSillaTurca" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACSillaTurca_simple"
+                                        value="Silla Turca (Hipófisis) - Simple"
+                                    )
+                                    .d-none Silla Turca (Hipófisis) - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACSillaTurca_compuesta"
+                                        value="Silla Turca (Hipófisis) - Compuesta"
+                                    )
+                                    .d-none Silla Turca (Hipófisis) - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACOidoSimple").text-dark Oído
+                            input(type="hidden" id="imagenTACOido" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACOido_simple"
+                                        value="Oído - Simple"
+                                    )
+                                    .d-none Oído - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACOido_compuesta"
+                                        value="Oído - Compuesta"
+                                    )
+                                    .d-none Oído - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACMacizoFacialSimple").text-dark Macizo facial
+                            input(type="hidden" id="imagenTACMacizoFacial" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACMacizoFacial_simple"
+                                        value="Macizo facial - Simple"
+                                    )
+                                    .d-none Macizo facial - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACMacizoFacial_compuesta"
+                                        value="Macizo facial - Compuesta"
+                                    )
+                                    .d-none Macizo facial - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACCuelloSimple").text-dark Cuello
+                            input(type="hidden" id="imagenTACCuello" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCuello_simple"
+                                        value="Cuello - Simple"
+                                    )
+                                    .d-none Cuello - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCuello_compuesta"
+                                        value="Cuello - Compuesta"
+                                    )
+                                    .d-none Cuello - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACToraxHRSimple").text-dark Tórax alta resolución
+                            input(type="hidden" id="imagenTACToraxHR" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACToraxHR_simple"
+                                        value="Tórax alta resolución - Simple"
+                                    )
+                                    .d-none Tórax alta resolución - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACToraxHR_compuesta"
+                                        value="Tórax alta resolución - Compuesta"
+                                    )
+                                    .d-none Tórax alta resolución - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACArticulacionesPequeñasSimple").text-dark Articulaciones pequeñas
+                            input(type="hidden" id="imagenTACArticulacionesPequeñas" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACArticulacionesPequeñas_simple"
+                                        value="Articulaciones pequeñas - Simple"
+                                    )
+                                    .d-none Articulaciones pequeñas - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACArticulacionesPequeñas_compuesta"
+                                        value="Articulaciones pequeñas - Compuesta"
+                                    )
+                                    .d-none Articulaciones pequeñas - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACCorporalSimple").text-dark TAC corporal
+                            input(type="hidden" id="imagenTACCorporal" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCorporal_simple"
+                                        value="TAC corporal - Simple"
+                                    )
+                                    .d-none TAC corporal - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCorporal_compuesta"
+                                        value="TAC corporal - Compuesta"
+                                    )
+                                    .d-none TAC corporal - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACATMSimple").text-dark Articulación témporo mandibular (ATM) dinámica
+                            input(type="hidden" id="imagenTACATM" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACATM_simple"
+                                        value="Articulación témporo mandibular (ATM) dinámica - Simple"
+                                    )
+                                    .d-none Articulación témporo mandibular (ATM) dinámica - Simple
+                        .col.text-center
+                    // Row end
+                .col-md
+                    .row
+                        .col &nbsp;
+                        .col.text-center
+                            b Simple
+                        .col.text-center
+                            b Contrastada
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACAbdomenPelvisSimple").text-dark Abdomen completo
+                            input(type="hidden" id="imagenTACAbdomenPelvis" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACAbdomenPelvis_simple"
+                                        value="Abdomen completo - Simple"
+                                    )
+                                    .d-none Abdomen completo - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACAbdomenPelvis_compuesta"
+                                        value="Abdomen completo - Compuesta"
+                                    )
+                                    .d-none Abdomen completo - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACAbdomenSimple").text-dark Abdomen
+                            input(type="hidden" id="imagenTACAbdomen" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACAbdomen_simple"
+                                        value="Abdomen - Simple"
+                                    )
+                                    .d-none Abdomen - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACAbdomen_compuesta"
+                                        value="Abdomen - Compuesta"
+                                    )
+                                    .d-none Abdomen - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACPelvisSimple").text-dark Pelvis
+                            input(type="hidden" id="imagenTACPelvis" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACPelvis_simple"
+                                        value="Pelvis - Simple"
+                                    )
+                                    .d-none Pelvis - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACPelvis_compuesta"
+                                        value="Pelvis - Compuesta"
+                                    )
+                                    .d-none Pelvis - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACUrotacSimple").text-dark Urotac
+                            input(type="hidden" id="imagenTACUrotac" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACUrotac_simple"
+                                        value="Urotac - Simple"
+                                    )
+                                    .d-none Urotac - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACUrotac_compuesta"
+                                        value="Urotac - Compuesta"
+                                    )
+                                    .d-none Urotac - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACColumnaVertebralSimple").text-dark Columna vertebral (1 segmento)
+                            input(type="hidden" id="imagenTACColumnaVertebral" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACColumnaVertebral_simple"
+                                        value="Columna vertebral (1 segmento) - Simple"
+                                    )
+                                    .d-none Columna vertebral (1 segmento) - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACColumnaVertebral_compuesta"
+                                        value="Columna vertebral (1 segmento) - Compuesta"
+                                    )
+                                    .d-none Columna vertebral (1 segmento) - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACRodillaSimple").text-dark Rodilla
+                            input(type="hidden" id="imagenTACRodilla" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACRodilla_simple"
+                                        value="Rodilla - Simple"
+                                    )
+                                    .d-none Rodilla - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACRodilla_compuesta"
+                                        value="Rodilla - Compuesta"
+                                    )
+                                    .d-none Rodilla - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACRodillaAngulacionSimple").text-dark Rodilla con angulación
+                            input(type="hidden" id="imagenTACRodillaAngulacion" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACRodillaAngulacion_simple"
+                                        value="Rodilla con angulación - Simple"
+                                    )
+                                    .d-none Rodilla con angulación - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACRodillaAngulacion_compuesta"
+                                        value="Rodilla con angulación - Compuesta"
+                                    )
+                                    .d-none Rodilla con angulación - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACCaderaSimple").text-dark Cadera
+                            input(type="hidden" id="imagenTACCadera" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCadera_simple"
+                                        value="Cadera - Simple"
+                                    )
+                                    .d-none Cadera - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACCadera_compuesta"
+                                        value="Cadera - Compuesta"
+                                    )
+                                    .d-none Cadera - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACMiembrosSuperioresSimple").text-dark Miembros superiores
+                            input(type="hidden" id="imagenTACMiembrosSuperiores" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACMiembrosSuperiores_simple"
+                                        value="Miembros superiores - Simple"
+                                    )
+                                    .d-none Miembros superiores - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACMiembrosSuperiores_compuesta"
+                                        value="Miembros superiores - Compuesta"
+                                    )
+                                    .d-none Miembros superiores - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACMiembrosInferioresSimple").text-dark Miembros inferiores
+                            input(type="hidden" id="imagenTACMiembrosInferiores" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACMiembrosInferiores_simple"
+                                        value="Miembros inferiores - Simple"
+                                    )
+                                    .d-none Miembros inferiores - Simple
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACMiembrosInferiores_compuesta"
+                                        value="Miembros inferiores - Compuesta"
+                                    )
+                                    .d-none Miembros inferiores - Compuesta
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTACEscanogramaMiembrosInferioresSimple").text-dark Escanograma tomográfico de miembros inferiores
+                            input(type="hidden" id="imagenTACEscanogramaMiembrosInferiores" name="imagen.tac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTACEscanogramaMiembrosInferiores_simple"
+                                        value="Escanograma tomográfico de miembros inferiores - Simple"
+                                    )
+                                    .d-none Escanograma tomográfico de miembros inferiores - Simple
+                        .col.text-center
+                    // Row end                            
+            .row
+                .col-md
+                    .row
+                        .col
+                            h5 ANGIOTOMOGRAFÍA O ANGIOTAC
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenAngioTACCraneoSimple").text-dark Cráneo
+                            input(type="hidden" id="imagenAngioTACCraneo" name="imagen.angiotac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenAngioTACCraneo_simple"
+                                        value="Cráneo"
+                                    )
+                                    .d-none Cráneo
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenAngioTACCuelloSimple").text-dark Cuello
+                            input(type="hidden" id="imagenAngioTACCuello" name="imagen.angiotac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenAngioTACCuello_simple"
+                                        value="Cuello"
+                                    )
+                                    .d-none Cuello
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenAngioTACCToraxSimple").text-dark Toráx
+                            input(type="hidden" id="imagenAngioTACCTorax" name="imagen.angiotac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenAngioTACCTorax_simple"
+                                        value="Toráx"
+                                    )
+                                    .d-none Toráx
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenAngioTACAbdominoPelvicoSimple").text-dark Abdomino-pélvico
+                            input(type="hidden" id="imagenAngioTACAbdominoPelvico" name="imagen.angiotac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenAngioTACAbdominoPelvico_simple"
+                                        value="Abdomino-pélvico"
+                                    )
+                                    .d-none Abdomino-pélvico
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenAngioTACMiembrosSuperioresSimple").text-dark Miembros superiores
+                            input(type="hidden" id="imagenAngioTACMiembrosSuperiores" name="imagen.angiotac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenAngioTACMiembrosSuperiores_simple"
+                                        value="Miembros superiores"
+                                    )
+                                    .d-none Miembros superiores
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenAngioTACMiembrosInferioresSimple").text-dark Miembros inferiores
+                            input(type="hidden" id="imagenAngioTACMiembrosInferiores" name="imagen.angiotac")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenAngioTACMiembrosInferiores_simple"
+                                        value="Miembros inferiores"
+                                    )
+                                    .d-none Miembros inferiores
+                    // Row end
+                .col-md
+                    .row
+                        .col
+                            h5 TOMOGRAFIA TRIDIMENSIONAL 3D
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTAC3DCraneoSimple").text-dark Cráneo
+                            input(type="hidden" id="imagenTAC3DCraneo" name="imagen.TAC3D")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTAC3DCraneo_simple"
+                                        value="Cráneo 3D"
+                                    )
+                                    .d-none Cráneo 3D
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTAC3DMacizoFacialSimple").text-dark Macizo Facial
+                            input(type="hidden" id="imagenTAC3DMacizoFacial" name="imagen.TAC3D")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTAC3DMacizoFacial_simple"
+                                        value="Macizo Facial 3D"
+                                    )
+                                    .d-none Macizo Facial 3D
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTAC3DColonoscopiaVirtualSimple").text-dark Colonoscopía virtual
+                            input(type="hidden" id="imagenTAC3DColonoscopiaVirtual" name="imagen.TAC3D")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTAC3DColonoscopiaVirtual_simple"
+                                        value="Colonoscopía virtual 3D"
+                                    )
+                                    .d-none Colonoscopía virtual 3D
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTAC3DBroncoscopiaVirtualSimple").text-dark Broncoscopía Virtual
+                            input(type="hidden" id="imagenTAC3DBroncoscopiaVirtual" name="imagen.TAC3D")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTAC3DBroncoscopiaVirtual_simple"
+                                        value="Broncoscopía Virtual 3D"
+                                    )
+                                    .d-none Broncoscopía Virtual 3D
+                    // Row end
+                    // Row start        
+                    .row
+                        .col
+                            label(for="imagenTAC3DArticulacionSimple").text-dark Articulación
+                            input(type="hidden" id="imagenTAC3DArticulacion" name="imagen.TAC3D")
+                        .col.text-center
+                            .checkbox
+                                label
+                                    input(
+                                        type="checkbox"
+                                        id="imagenTAC3DArticulacion_simple"
+                                        value="Articulación 3D"
+                                    )
+                                    .d-none Articulación 3D
+                    // Row end
+            .row
+                .col-lg
+                    .form-group
+                        label(for="imagenTACOtros") En caso de requerir otro estudio, por favor especificar la región anatómica:
+                        textarea(id="imagenTACOtros", name="imagen.TACOtros" class="form-control")
+
+
+
+
+
+
+
+script.
+    function simpleChange(event) {
+        var elemId = event.target.id.split("_")[0]
+        if (event.target.checked) {
+            $(`#${elemId}`).val(event.target.value);
+        } else {
+            $(`#${elemId}`).val('');
+        }
+
+    }
+    function compuestaChange(event) {
+        var elemId = event.target.id.split("_")[0]
+        if (event.target.checked) {
+            $(`#${elemId}_simple`)
+                .attr("disabled", true)
+                .prop("checked", true)
+                
+            $(`#${elemId}`).val(event.target.value)
+        } else {
+            $(`#${elemId}_simple`)
+                .removeAttr("disabled")
+                .prop("checked", false)
+            $(`#${elemId}`).val('') 
+        }
+
+    }
+    (()=>{
+        window.addEventListener('load', ()=>{
+            var cboxes = $("#imagenTAC").find(":checkbox");
+            cboxes.each( (idx, cb)=> {
+                var s_id = cb.id.split("_")
+                if(s_id[1]=="simple") {
+                    cb.addEventListener("change", simpleChange)
+                } else {
+                    cb.addEventListener("change", compuestaChange)
+                }
+            })
+        })
+    })();

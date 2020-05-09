@@ -80,9 +80,15 @@ class PhotoCollection {
                         
                         $('#uploadingModal').modal('show')
                         let request = new XMLHttpRequest();
-                        request.addEventListener("load", (e) =>{
-                            //TODO: handle status other than 200 as errors
-                            window.location.replace("./home")
+                        request.addEventListener("load", (event) =>{
+                            var res = event.target;
+                            if (res.status!=200) {
+                                $('#uploadingModal').modal('hide');
+                                this.showAlert("Ocurrió un error enviando orden. Por favor espere un momento y vuelva a intentar", this.ALERTS.ERROR)
+                                console.log(res.response)
+                            } else {
+                                window.location.replace("./home")
+                            }
                         })
                         request.addEventListener("error",(e) => {
                             $('#uploadingModal').modal('hide')

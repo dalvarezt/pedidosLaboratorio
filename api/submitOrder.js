@@ -19,6 +19,9 @@ function addAtachmnet(file, db, id, rev) {
             db.attachment.insert(id, file.originalname, data, file.mimetype, {rev:rev})
             .then(body => {
                 console.debug(body)
+                fs.unlink(file.path, (err)=>{
+                    console.error("Failed to delete file " + file.path, err)
+                });
                 resolve(body.rev)
             }).catch(err => {
                 console.error("Error retrieving document with id: "+id, err);
@@ -42,7 +45,20 @@ function postOrder(req, res) {
                 if (!doc[tags[0]]) {
                     doc[tags[0]] = {};
                 }
-                doc[tags[0]][tags[1]] = req.body[k]
+                if (req.body[k] instanceof Array) {
+                    var fdata = []
+                    for (var v of req.body[k]) {
+                        if (v!="") {
+                            fdata.push(v)
+                        }
+                    }
+                    if (fdata.length>0) {
+                        doc[tags[0]][tags[1]] = fdata
+                    }
+                } else if (req.body[k]!=""){
+                    doc[tags[0]][tags[1]] = req.body[k]
+                }
+                
 
             }
         }

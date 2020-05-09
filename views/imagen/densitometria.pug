@@ -16,4 +16,177 @@ div(class="card")
     div(id="imagenDensitometria" class="collapse hide" aria-labelledby="imagenDensitometriaTitulo" data-parent="#imagen")
         div(class="card-body")
             .row
-                //- TODO: @dalvarezt 
+                .col-sm 
+                    .card.mb-2.bg-light
+                        .card-body
+                            .form-check.form-check-inline
+                                input(
+                                    type="radio"
+                                    name="imagen.desitometria"
+                                    id="imagenDensitometriaPrimerEstudio"
+                                    value="Primer estudio"
+                                ).form-check-input
+                                label(for="imagenDensitometriaPrimerEstudio").form-check-label Primer estudio
+                            .form-check.form-check-inline
+                                input(
+                                    type="radio"
+                                    name="imagen.desitometria"
+                                    id="imagenDensitometriaEstudioSubsecuente"
+                                    value="Estudio subsecuente"
+                                ).form-check-input
+                                label(for="imagenDensitometriaEstudioSubsecuente").form-check-label Estudio subsecuente
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaColumnaAnteroposterior" 
+                                name="imagen.Densitometria" 
+                                value="Columna anteroposterior"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaColumnaAnteroposterior"
+                            ) Columna anteroposterior
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaColumnaLateral" 
+                                name="imagen.Densitometria" 
+                                value="Columna lateral"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaColumnaLateral"
+                            ) Columna lateral
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaFemurUnilateral" 
+                                name="imagen.Densitometria" 
+                                value="Fémur unilateral"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaFemurUnilateral"
+                            ) Fémur unilateral
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaMorfometriaLateral" 
+                                name="imagen.Densitometria" 
+                                value="Morfometría lateral (L.V.A.)"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaMorfometriaLateral"
+                            ) Morfometría lateral (L.V.A.)
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaAntebrazo" 
+                                name="imagen.Densitometria" 
+                                value="Antebrazo"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaAntebrazo"
+                            ) Antebrazo
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaCuerpoTotal" 
+                                name="imagen.Densitometria" 
+                                value="Cuerpo total"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaCuerpoTotal"
+                            ) Cuerpo total
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaFemurBilateral" 
+                                name="imagen.Densitometria" 
+                                value="Fémur bilateral"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaFemurBilateral"
+                            ) Fémur bilateral
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaComposicionCorporal" 
+                                name="imagen.Densitometria" 
+                                value="Composición corporal"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaComposicionCorporal"
+                            ) Composición corporal
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaFemurOrtopedico" 
+                                name="imagen.Densitometria" 
+                                value="Fémur ortopédico"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaFemurOrtopedico"
+                            ) Fémur ortopédico
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenDensitometriaColumnaLateral" 
+                                name="imagen.Densitometria" 
+                                value="Columna lateral"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenDensitometriaColumnaLateral"
+                            ) Columna lateral
+            .row
+                .col-md
+                    .form-group
+                        input(type="hidden" name="imagen.Densitometria" id="imagenDensitometriaOtros")
+                        label(for="imagenDensitometriaOtrosi") Otros:
+                        input(
+                            type="text" 
+                            id="imagenDensitometriaOtrosi"
+                            onchange="$('#imagenDensitometriaOtros').val('Otros: '+this.value)"
+                        ).form-control
