@@ -16,4 +16,19 @@ div(class="card")
     div(id="labEstudiosEspeciales" class="collapse hide" aria-labelledby="labEstudiosEspecialesTitulo" data-parent="#laboratorio")
         div(class="card-body")
             .row
-                //- TODO: @IsabelNaranjo 
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labEstudiosEspecialesEspermatograma" name="lab.estudiosespeciales" value="Espermatograma") 
+                            label(class="text-dark" for="labEstudiosEspecialesEspermatograma") Espermatograma
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labEstudiosEspecialesEstudioCálculo" name="lab.estudiosespeciales" value="Estudio Cálculo") 
+                            label(class="text-dark" for="labEstudiosEspecialesEstudioCálculo") Estudio Cálculo
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labEstudiosEspecialesSeguimiento" name="lab.estudiosespeciales" value="Seguimiento") 
+                            label(class="text-dark" for="labEstudiosEspecialesSeguimiento") Seguimiento  
