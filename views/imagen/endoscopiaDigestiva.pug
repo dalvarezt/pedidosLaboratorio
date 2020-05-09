@@ -16,4 +16,76 @@ div(class="card")
     div(id="imagenEndoscopia" class="collapse hide" aria-labelledby="imagenEndoscopiaTitulo" data-parent="#imagen")
         div(class="card-body")
             .row
-                //- TODO: @IsabelNaranjo 
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenEndoscopiaDigestivaEDAlta" 
+                                name="imagen.endoscopiaDigestiva" 
+                                value="Endoscopía digestiva alta"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenEndoscopiaDigestivaEDAlta"
+                            ) Endoscopía digestiva alta
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenEndoscopiaDigestivaEDBaja" 
+                                name="imagen.endoscopiaDigestiva" 
+                                value="Endoscopía digestiva baja o Colonoscopía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenEndoscopiaDigestivaEDBaja"
+                            ) Endoscopía digestiva baja o Colonoscopía
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenEndoscopiaRectosignosdoscopia" 
+                                name="imagen.endoscopiaDigestiva" 
+                                value="Rectosignosdoscopía"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenEndoscopiaRectosignosdoscopia"
+                            ) Rectosignosdoscopía
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenEndoscopiaDigestivaRectoscopia" 
+                                name="imagen.endoscopiaDigestiva" 
+                                value="Rectoscopia"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenEndoscopiaDigestivaRectoscopia"
+                            ) Rectoscopia
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="imagenEndoscopiaDigestivaExtraccion" 
+                                name="imagen.endoscopiaDigestiva" 
+                                value="Extracción de cuerpos extraños"
+                            ) 
+                            label(
+                                class="text-dark" 
+                                for="imagenEndoscopiaDigestivaExtraccion"
+                            ) Extracción de cuerpos extraños
+                .col-sm
