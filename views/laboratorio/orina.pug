@@ -15,5 +15,96 @@ div(class="card")
                 | Orina
     div(id="labOrina" class="collapse hide" aria-labelledby="labOrinaTitulo" data-parent="#laboratorio")
         div(class="card-body")
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaElementalMicroscópico" name="lab.orina" value="Elemental y microscópico") 
+                            label(class="text-dark" for="labOrinaElementalMicroscópico") Elemental y microscópico
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaGotaFresca" name="lab.orina" value="Gota fresca") 
+                            label(class="text-dark" for="labOrinaGotaFresca") Gota fresca
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaGram" name="lab.orina" value="Gram") 
+                            label(class="text-dark" for="labOrinaGram") Gram
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaMicroalbuminuria" name="lab.orina" value="Microalbuminuria") 
+                            label(class="text-dark" for="labOrinaMicroalbuminuria") Microalbuminuria
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaProteinuriaHoras" name="lab.orina" value="Proteinuria 24 Horas") 
+                            label(class="text-dark" for="labOrinaProteinuriaHoras") Proteinuria 24 Horas
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaDepuraciónCreatinina" name="lab.orina" value="Depuración creatinina") 
+                            label(class="text-dark" for="labOrinaDepuraciónCreatinina") Depuración creatinina    
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaSodio" name="lab.orina" value="Sodio") 
+                            label(class="text-dark" for="labOrinaSodio") Sodio
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaPotasio" name="lab.orina" value="Potasio") 
+                            label(class="text-dark" for="labOrinaPotasio") Potasio   
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaCloro" name="lab.orina" value="Cloro") 
+                            label(class="text-dark" for="labOrinaCloro") Cloro
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaAcÚrico" name="lab.orina" value="Ac. úrico") 
+                            label(class="text-dark" for="labOrinaAcÚrico") Ac. úrico     
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaCalcio" name="lab.orina" value="Calcio") 
+                            label(class="text-dark" for="labOrinaCalcio") Calcio
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaFósforo" name="lab.orina" value="Fósforo") 
+                            label(class="text-dark" for="labOrinaFósforo") Fósforo    
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaMagensio" name="lab.orina" value="Magnesio") 
+                            label(class="text-dark" for="labOrinaMagnesio") Magnesio
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaPruebaEmabarazo" name="lab.orina" value="Prueba de embarazo") 
+                            label(class="text-dark" for="labOrinaPruebaEmabarazo") Prueba de embarazo
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labOrinaPanelDrogas" name="lab.orina" value="Panel de drogas (abuso)") 
+                            label(class="text-dark" for="labOrinaPanelDrogas") Panel de drogas (abuso)
             .row
-                //- TODO: @IsabelNaranjo 
+                .col-md
+                    .form-group
+                        input(type="hidden" name="lab.orina" id="labOrinaOtros")
+                        label(class="text-dark" for="labOrinaOtros") Otros:
+                        input(
+                            type="text" 
+                            id="OrinaOtros"
+                            onchange="$('#labOrina').val('Otros: '+this.value)"
+                        ).form-control
