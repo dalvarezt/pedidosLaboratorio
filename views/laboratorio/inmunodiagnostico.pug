@@ -16,4 +16,587 @@ div(class="card")
     div(id="labInmunodiagnostico" class="collapse hide" aria-labelledby="labInmunodiagnosticoTitulo" data-parent="#laboratorio")
         div(class="card-body")
             .row
-                //- TODO: @IsabelNaranjo Agregar aquí lo de inmunodiagnóstico
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDTSH"  
+                                data-toggle="collapse"
+                                data-target="#collapse-TSH"
+                            ) 
+                            label(for="labIDTSH").text-dark TSH
+                    .collapse.ml-4(id="collapse-TSH")
+                        label(for="labIDTSHfT3").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDTSHfT3"
+                                name="lab.TSH"
+                                value="TSHfT3"
+                            )
+                            | fT3 &nbsp;
+                        label(for="labIDTSHfT4").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDTSHfT4"
+                                name="lab.TSH"
+                                value="TSH fT4"
+                            ).checkbox-inline
+                            | fT4 &nbsp;                           
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDFSH"  
+                                data-toggle="collapse"
+                                data-target="#collapse-FSH"
+                            ) 
+                            label(for="labIDFSH").text-dark FSH
+                    .collapse.ml-4(id="collapse-FSH")
+                        label(for="labIDFSHT3Total").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDFSHT3Total"
+                                name="lab.FSH"
+                                value="FSHT3Total"
+                            )
+                            | T3 Total &nbsp;
+                        label(for="labIDFSHT4Total").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDFSHT4Total"
+                                name="lab.FSH"
+                                value="FSH T4Total"
+                            ).checkbox-inline
+                            | T4 Total &nbsp;                           
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoEstrógenos" name="lab.inmunodiagnostico" value="Estrógenos")
+                            label(class="text-dark" for="labInmunodiagnosticoEstrógenos") Estrógenos
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoLH" name="lab.inmunodiagnostico" value="LH")
+                            label(class="text-dark" for="labInmunodiagnosticoLH") LH
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoBHCG" name="lab.inmunodiagnostico" value="BHCG")
+                            label(class="text-dark" for="labInmunodiagnosticoBHCG") BHCG
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoProgesterona" name="lab.inmunodiagnostico" value="Progesterona")
+                            label(class="text-dark" for="labInmunodiagnosticoProgesterona") Progesterona                           
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoTestosterona" name="lab.inmunodiagnostico" value="Testosterona")
+                            label(class="text-dark" for="labInmunodiagnosticoTestosterona") Testosterona                           
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDProlactina"  
+                                data-toggle="collapse"
+                                data-target="#collapse-Prolactina"
+                            ) 
+                            label(for="labIDProlactina").text-dark Prolactina
+                    .collapse.ml-4(id="collapse-Prolactina")
+                        label(for="labIDProlactinaAM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDProlactinaAM"
+                                name="lab.prolactina"
+                                value="ProlactinaAM"
+                            )
+                            | AM &nbsp;
+                        label(for="labIDProlactinaPM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDProlactinaPM"
+                                name="lab.prolactina"
+                                value="ProlactinaPM"
+                            ).checkbox-inline
+                            | PM &nbsp;             
+                        label(for="labIDProlactina10").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDProlactina10"
+                                name="lab.prolactina"
+                                value="Prolactina10"
+                            ).checkbox-inline
+                            | 10 &nbsp;                                                                                                                     
+
+            .row
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDCoitisol"  
+                                data-toggle="collapse"
+                                data-target="#collapse-Cortisol"
+                            ) 
+                            label(for="labIDCortisol").text-dark Cortisol
+                    .collapse.ml-4(id="collapse-Cortisol")
+                        label(for="labIDCortisolAM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDCortisolAM"
+                                name="lab.cortisol"
+                                value="CortisolAM"
+                            )
+                            | AM &nbsp;
+                        label(for="labIDCortisolPM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDCortisolPM"
+                                name="lab.cortisol"
+                                value="CortisolPM"
+                            ).checkbox-inline
+                            | PM &nbsp;
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoCortisolOrina" name="lab.inmunodiagnostico" value="Cortisol Orina 24H")
+                            label(class="text-dark" for="labInmunodiagnosticoCortisolOrina") Cortisol Orina 24 H
+            .row
+                .col-sm
+                    .checkbox
+                        label                            
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="labInmunodiagnosticoCurvaInsulina"
+                                data-toggle="collapse"
+                                data-target="#labInmunodiagnosticoCurvaInsulinaHoras"
+                                name="lab.inmunodiagnostico"
+                                value="Curva de Insulina"
+                            ) 
+                            label(class="text-dark" for="labInmunodiagnosticoCurvaInsulina") Curva de Insulina
+                            .d-sm-inline-flex.ml-3
+                                input(
+                                    class="form-control w-50 collapse" 
+                                    id="labInmunodiagnosticoCurvaInsulinaHoras" 
+                                    type="number" 
+                                    min=0 max=8 
+                                    placeholder="Horas" 
+                                    onchange="$('#labInmunodiagnosticoCurvaInsulina').val('Curva de Insulina - ' + this.value + 'h')"
+                                )    
+                .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoPéptidoC" name="lab.inmunodiagnostico" value="Péptido C")
+                            label(class="text-dark" for="labInmunodiagnosticoPéptidoC") Péptido C               
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoIGF" name="lab.inmunodiagnostico" value="IGF - 1")
+                            label(class="text-dark" for="labInmunodiagnosticoIGF") IGF-1
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoIgFBP3" name="lab.inmunodiagnostico" value="IgFBP3")
+                            label(class="text-dark" for="labInmunodiagnosticoIgFBP3") IgFBP3
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoHormonaCrecimiento" name="lab.inmunodiagnostico" value="Hormona Crecimiento (HGH)")
+                            label(class="text-dark" for="labInmunodiagnosticoHormonaCrecimiento") Hormona Crecimeinto (HGH)
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoParatohormona" name="lab.inmunodiagnostico" value="Paratohormona")
+                            label(class="text-dark" for="labInmunodiagnosticoParatohormona") Paratohormona                  
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoOHProgesterona" name="lab.inmunodiagnostico" value="17-OH-Progesterona")
+                            label(class="text-dark" for="labInmunodiagnosticoOHProgesterona") 17-OH-Progesterona
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoAndrostenediona" name="lab.inmunodiagnostico" value="Androstenediona")
+                            label(class="text-dark" for="labInmunodiagnosticoAndrostenediona") Androstenediona
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoDHEAS" name="lab.inmunodiagnostico" value="DHEAS")
+                            label(class="text-dark" for="labInmunodiagnosticoDHEAS") DHEAS
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoACTH" name="lab.inmunodiagnostico" value="ACTH")
+                            label(class="text-dark" for="labInmunodiagnosticoACTH") ACTH                           
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoTestEstimulaciónHGH" name="lab.inmunodiagnostico" value="Test Estimulación HGH")
+                            label(class="text-dark" for="labInmunodiagnosticoTestEstimulaciónHGH") Test Estimulación HGH
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoVitaminaD25Hidroxi" name="lab.inmunodiagnostico" value="Vitamina D 25 Hidroxi")
+                            label(class="text-dark" for="labInmunodiagnosticoVitaminaD25Hidroxi") Vitamina D 25 Hidroxi
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoTestosterona" name="lab.inmunodiagnostico" value="Testosterona")
+                            label(class="text-dark" for="labInmunodiagnosticoTestosterona") Testosterona
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDAntiToxoplasma"  
+                                data-toggle="collapse"
+                                data-target="#collapse-AntiToxoplasma"
+                            ) 
+                            label(for="labIDAntiToxoplasma").text-dark Anti Toxoplasma
+                    .collapse.ml-4(id="collapse-AntiToxoplasma")
+                        label(for="labIDAntiToxoplasmaIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiToxoplasmaIgG"
+                                name="lab.AntiToxoplasma"
+                                value="AntiToxoplasmaIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDAntiToxoplasmaIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiToxoplasmaIgM"
+                                name="lab.AntiToxoplasma"
+                                value="AntiToxoplasma IgM"
+                            ).checkbox-inline
+                            | IgM &nbsp; 
+            .row
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDAntiRubeola"  
+                                data-toggle="collapse"
+                                data-target="#collapse-AntiRubeola"
+                            ) 
+                            label(for="labIDAntiRubeola").text-dark Anti Rubeola
+                    .collapse.ml-4(id="collapse-AntiRubeola")
+                        label(for="labIDAntiRubeolaIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiRubeolaIgG"
+                                name="lab.AntiRubeola"
+                                value="AntiRubeolaIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDAntiRubeolaIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiRubeolaIgM"
+                                name="lab.AntiRubeola"
+                                value="AntiRubeola IgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;                             
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDAntiCMV"  
+                                data-toggle="collapse"
+                                data-target="#collapse-AntiCMV"
+                            ) 
+                            label(for="labIDAntiCMV").text-dark Anti CMV
+                    .collapse.ml-4(id="collapse-AntiCMV")
+                        label(for="labIDAntiCMVIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiCMVIgG"
+                                name="lab.AntiCMV"
+                                value="AntiCMVIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDAntiCMVIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiCMVIgM"
+                                name="lab.AntiCMV"
+                                value="AntiCMVIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;       
+            .row
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDAntiHerpesI"  
+                                data-toggle="collapse"
+                                data-target="#collapse-AntiHerpesI"
+                            ) 
+                            label(for="labIDAntiHerpesI").text-dark Anti Herpes I
+                    .collapse.ml-4(id="collapse-AntiHerpesI")
+                        label(for="labIDAntiHerpesIIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiHerpesIIgG"
+                                name="lab.AntiHerpesI"
+                                value="AntiHerpesIIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDAntiHerpesIIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiHerpesIIgM"
+                                name="lab.AntiHerpesI"
+                                value="AntiHerpesIIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;       
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDAntiHerpesII"  
+                                data-toggle="collapse"
+                                data-target="#collapse-AntiHerpesII"
+                            ) 
+                            label(for="labIDAntiHerpesII").text-dark Anti Herpes II
+                    .collapse.ml-4(id="collapse-AntiHerpesII")
+                        label(for="labIDAntiHerpesIIIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiHerpesIIIgG"
+                                name="lab.AntiHerpesII"
+                                value="AntiHerpesIIIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDAntiHerpesIIIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDAntiHerpesIIIgM"
+                                name="lab.AntiHerpesII"
+                                value="AntiHerpesIIIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;       
+            .row
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDTORCH"  
+                                data-toggle="collapse"
+                                data-target="#collapse-TORCH"
+                            ) 
+                            label(for="labIDTORCH").text-dark TORCH
+                    .collapse.ml-4(id="collapse-TORCH")
+                        label(for="labIDTORCHIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDTORCHIgG"
+                                name="lab.TORCH"
+                                value="TORCHIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDTORCHIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDTORCHIgM"
+                                name="lab.TORCH"
+                                value="TORCHIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;  
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoC3" name="lab.inmunodiagnostico" value="C3")
+                            label(class="text-dark" for="labInmunodiagnosticoC3") C3
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoC4" name="lab.inmunodiagnostico" value="C4")
+                            label(class="text-dark" for="labInmunodiagnosticoC4") C4
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoIgG" name="lab.inmunodiagnostico" value="IgG")
+                            label(class="text-dark" for="labInmunodiagnosticoIgG") IgG
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoIgM" name="lab.inmunodiagnostico" value="IgM")
+                            label(class="text-dark" for="labInmunodiagnosticoIgM") IgM  
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoIgE" name="lab.inmunodiagnostico" value="IgE")
+                            label(class="text-dark" for="labInmunodiagnosticoIgE") IgE
+            .row    
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoIgA" name="lab.inmunodiagnostico" value="IgA")
+                            label(class="text-dark" for="labInmunodiagnosticoIgA") IgA      
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoIgD" name="lab.inmunodiagnostico" value="IgD")
+                            label(class="text-dark" for="labInmunodiagnosticoIgD") IgD 
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoToxoplasmaAvidez" name="lab.inmunodiagnostico" value="Toxoplasma avidez")
+                            label(class="text-dark" for="labInmunodiagnosticoToxoplasmaAvidez") Toxoplasma avidez
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoInterleucina" name="lab.inmunodiagnostico" value="Interleucina-6")
+                            label(class="text-dark" for="labInmunodiagnosticoInterleucina") Interleucina-6
+            .row
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDChlamidia"  
+                                data-toggle="collapse"
+                                data-target="#collapse-Chlamidia"
+                            ) 
+                            label(for="labIDChlamidia").text-dark Chlamidia
+                    .collapse.ml-4(id="collapse-Chlamidia")
+                        label(for="labIDChlamidiaIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDChlamidiaIgG"
+                                name="lab.Chlamidia"
+                                value="ChlamidiaIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDChlamidiaIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDChlamidiaIgM"
+                                name="lab.Chlamidia"
+                                value="ChlamidiaIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;  
+                        label(for="labIDChlamidiaIgA").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDChlamidiaIgA"
+                                name="lab.Chlamidia"
+                                value="ChlamidiaIgA"
+                            ).checkbox-inline
+                            | IgA &nbsp;
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDHepatitisA"  
+                                data-toggle="collapse"
+                                data-target="#collapse-HepatitisA"
+                            ) 
+                            label(for="labIDHepatitisA").text-dark Hepatitis A
+                    .collapse.ml-4(id="collapse-HepatitisA")
+                        label(for="labIDHepatitisAIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDHepatitisAIgG"
+                                name="lab.HepatitisA"
+                                value="HepatitisAIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDHepatitsAIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDHepatitsAIgM"
+                                name="lab.HepatitisA"
+                                value="HepatitisAIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;  
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoHepatitisB" name="lab.inmunodiagnostico" value="Hepatitis B")
+                            label(class="text-dark" for="labInmunodiagnosticoHepatitisB") Hepatits B
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDHBc"  
+                                data-toggle="collapse"
+                                data-target="#collapse-HBc"
+                            ) 
+                            label(for="labIDHBc").text-dark HBc
+                    .collapse.ml-4(id="collapse-HBc")
+                        label(for="labIDHBcIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDHBcIgG"
+                                name="lab.HBc"
+                                value="HBcIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDHBcIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDHBcIgM"
+                                name="lab.HBc"
+                                value="HBcIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;  
+            .row    
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoHBsAg" name="lab.inmunodiagnostico" value="HBsAg")
+                            label(class="text-dark" for="labInmunodiagnosticoHBsAg") HBsAg      
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoAntiHBs" name="lab.inmunodiagnostico" value="Anti HBs")
+                            label(class="text-dark" for="labInmunodiagnosticoAntiHBs") Anti HBs 
+            .row    
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoHBeAg" name="lab.inmunodiagnostico" value="HBeAg")
+                            label(class="text-dark" for="labInmunodiagnosticoHBeAg") HBeAg
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoAntiHbe" name="lab.inmunodiagnostico" value="Anti Hbe")
+                            label(class="text-dark" for="labInmunodiagnosticoAntiHbe") Anti Hbe
+            .row
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoHepatitisC" name="lab.inmunodiagnostico" value="Hepatitis C")
+                            label(class="text-dark" for="labInmunodiagnosticoHepatitisC") Hepatits C
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoTuberculosisSuero" name="lab.inmunodiagnostico" value="Tuberuclosis en suero")
+                            label(class="text-dark" for="labInmunodiagnosticoTuberculosisSuero") Tuberculosis en suero
+
