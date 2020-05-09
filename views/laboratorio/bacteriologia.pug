@@ -16,4 +16,104 @@ div(class="card")
     div(id="labBacteriologia" class="collapse hide" aria-labelledby="labBacteriologiaTitulo" data-parent="#laboratorio")
         div(class="card-body")
             .row
-                //- TODO: @IsabelNaranjo 
+                 .col-sm
+                     .checkbox
+                        label                            
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="labBactereologiaMuestraDe"
+                                data-toggle="collapse"
+                                data-target="#labBactereologiaMuestraDeTexto"
+                                name="lab.bactereologia"
+                                value="Muestra de:"
+                             ) 
+                            label(class="text-dark" for="labBactereologiaMuestraDe") Muestra de
+                            .d-sm-inline-flex.ml-3
+                                input(
+                                    class="form-control w-200 collapse" 
+                                    id="labBactereologiaMuestraDeTexto" 
+                                    type="text" 
+                                )                            
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labBactereologiaCultivoYAntibiograma" name="lab.bactereologia" value="Cultivo y Antibiograma") 
+                            label(class="text-dark" for="labBactereologiaCultivoYAntibiograma") Cultivo y Antibiograma
+            .row                                 
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labBactereologiaGram" name="lab.bactereologia" value="Gram") 
+                            label(class="text-dark" for="labBactereologiaGram") Gram
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labBactereologiaFresco" name="lab.bactereologia" value="Fresco") 
+                            label(class="text-dark" for="labBactereologiaFresco") Fresco
+            
+            .row
+                 .col-sm
+                     .checkbox
+                        label
+                            input( type="checkbox" checked=false id="labBactereologiaBAAR" name="lab.bactereologia" value="BAAR") 
+                            label(class="text-dark" for="labBactereologiaBAAR" ) BAAR  _ DíasN°
+                            input(
+                                  type="checkbox"
+                                  id="labBactereologiaDíasN°"
+                                  data-toggle="collapse"
+                                  data-target="#labBactereologiaDíasN°Texto"
+                                  name="lab.bactereologia"
+                                )
+                            label(class="text-dark" for="labBactereologiaDíasN°") Días N°  
+                            .d-sm-inline-flex.ml-3  
+                                input(
+                                    class="form-control w-50 collapse" 
+                                    id="labBactereologiaDíasN°Texto" 
+                                    type="text" 
+                                )     
+            .row                                 
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labBactereologiaInvestigaciónDeHongos" name="lab.bactereologia" value="Investigación de Hongos (KOH)") 
+                            label(class="text-dark" for="labBactereologiaInvestigacióndeHongos") Investigación de Hongos (KOH)               
+                 .col-sm
+                     .checkbox
+                        label                            
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="labBactereologiaControlTratamiento"
+                                data-toggle="collapse"
+                                data-target="#labBactereologiaControlTratamientoTexto"
+                                name="lab.bactereologia"
+                                value="Control tratamiento"
+                             ) 
+                            label(class="text-dark" for="labBactereologiaControlTratamiento") Control tratamiento
+                            .d-sm-inline-flex.ml-3
+                                input(
+                                    class="form-control w-150 collapse" 
+                                    id="labBactereologiaControlTratamientoTexto" 
+                                    type="text" 
+                                )              
+            .row                                      
+                 .col-sm
+                     .checkbox
+                        label                            
+                            input(
+                                type="checkbox" 
+                                checked=false 
+                                id="labBactereologiaOtros"
+                                data-toggle="collapse"
+                                data-target="#labBactereologiaOtrosTexto"
+                                name="lab.bactereologia"
+                                value="Otros"
+                             ) 
+                            label(class="text-dark" for="labBactereologiaOtros") Otros
+                            .d-sm-inline-flex.ml-3
+                                input(
+                                    class="form-control w-150 collapse" 
+                                    id="labBactereologiaOtrosTexto" 
+                                    type="text" 
+                                )                            
