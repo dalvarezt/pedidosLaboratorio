@@ -16,4 +16,58 @@ div(class="card")
     div(id="labPerfiles" class="collapse hide" aria-labelledby="labPerfilesTitulo" data-parent="#laboratorio")
         div(class="card-body")
             .row
-                //- TODO: @IsabelNaranjo los perfiles irían en una sola columna en lugar de dos como en el resto
+                .col-lg
+                    h5 PERFIL GENERAL
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="imagenLBPerfilGeneralBiometríahemáticaEMOcoproparasitarioglucosaureacreatininaácúricocolesteroltriglicéridosHDLLDLVDRL" 
+                                name="lab.PerfilesPerfilGeneral" 
+                                value="Biometría hemática, EMO, coproparasitario, glucosa, urea, creatinina, ác. úrico,colesterol, triglicéridos, HDL, LDL, VDRL."
+                            ) 
+                            label(for="labLBPerfilGeneralBiometríahemáticaEMOcoproparasitarioglucosaureacreatininaácúricocolesteroltriglicéridosHDLLDLVDRL").text-dark Biometría hemática, EMO, coproparasitario, glucosa, urea, creatinina, ác. úrico,colesterol, triglicéridos, HDL, LDL, VDRL.
+            .row
+                .col-lg
+            .row
+                .col-sm
+                    h5 PERFIL HEPÁTICO
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="LabLBPerfilHepáticoBiometríaglucosacolesteroltriglicéridosproteinasalbúminabilirrubinasTGOTGPGGTfosfatasaalcalinaTP" 
+                                name="lab.PerfilesPerfilHepático" 
+                                value="Biometría, glucosa, colesterol, triglicéridos, proteinas, albúmina, bilirrubinas, TGO,TGP, GGT, fosfatasa alcalina, TP."
+                            ) 
+                            label(for="labLBPerfilHepáticoBiometríaglucosacolesteroltriglicéridosproteinasalbúminabilirrubinasTGOTGPGGTfosfatasaalcalinaTP").text-dark Biometría, glucosa, colesterol, triglicéridos, proteinas, albúmina, bilirrubinas, TGO,TGP, GGT, fosfatasa alcalina, TP.
+            .row
+                .col-lg
+                    h5 PERFIL DIABETES
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labLBPerfilDiabetesBiometríaglucosaHbglicosiladafructosaminaureacreatininaácúricocolesterolHDLLDLtriglicéridosmicroalbuminuriaEMO" 
+                                name="lab.PerfilesPerfilDiabetes" 
+                                value="Biometría, glucosa, Hb glicosilada, fructosamina, urea, creatinina, ác. úrico, colesterol, HDL, LDL, triglicéridos, microalbuminuria, EMO"
+                            ) 
+                            label(for="labLBPerfilDiabetesBiometríaglucosaHbglicosiladafructosaminaureacreatininaácúricocolesterolHDLLDLtriglicéridosmicroalbuminuriaEMO").text-dark Biometría, glucosa, Hb glicosilada, fructosamina, urea, creatinina, ác. úrico, colesterol, HDL, LDL, triglicéridos, microalbuminuria, EMO
+            .row
+                .col-lg
+                    h5 PERFIL LIPÍDICO
+            .row
+                .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="imagenLBPerfilLipídicoLípidostotalescolesteroltriglicéridosHDLLDLApoAApoBfibrinógeno" 
+                                name="lab.PerfilesPerfilLipídico" 
+                                value="Lípidos totales, colesterol, triglicéridos, HDL, LDL, Apo A, Apo B, fibrinógeno."
+                            ) 
+                            label(for="labLBPerfilGeneralLípidostotalescolesteroltriglicéridosHDLLDLApoAApoBfibrinógeno").text-dark Lípidos totales, colesterol, triglicéridos, HDL, LDL, Apo A, Apo B, fibrinógeno.
