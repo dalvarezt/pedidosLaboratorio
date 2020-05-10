@@ -15,5 +15,141 @@ div(class="card")
                 | Seroinmunología
     div(id="labSeroinmunologia" class="collapse hide" aria-labelledby="labSeroinmunologiaTitulo" data-parent="#laboratorio")
         div(class="card-body")
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaAsto" name="lab.seroinmunología" value="Asto") 
+                            label(class="text-dark" for="labSeroinmunologíaAsto") Asto
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaLátex" name="lab.seroinmunología" value="Látex") 
+                            label(class="text-dark" for="labSeroinmunologíaLátex") Látex 
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaPCR" name="lab.seroinmunología" value="PCR") 
+                            label(class="text-dark" for="labSeroinmunologíaPCR") PCR
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaWaalerRose" name="lab.seroinmunología" value="WaalerRose") 
+                            label(class="text-dark" for="labSeroinmunologíaWaalerRose") Waaler Rose
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaVDRL" name="lab.seroinmunología" value="VDRL") 
+                            label(class="text-dark" for="labSeroinmunologíaVDRL") VDRL
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaRPR" name="lab.seroinmunología" value="RPR") 
+                            label(class="text-dark" for="labSeroinmunologíaRPR") RPR   
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaHIV" name="lab.seroinmunología" value="HIV") 
+                            label(class="text-dark" for="labSeroinmunologíaHIV") HIV
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaFTAABS" name="lab.seroinmunología" value="FTA-ABS") 
+                            label(class="text-dark" for="labSeroinmunologíaFTAABS") FTA-ABS    
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaAsto" name="lab.seroinmunología" value="Asto") 
+                            label(class="text-dark" for="labSeroinmunologíaAsto") Asto
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaSerameba" name="lab.seroinmunología" value="Serameba") 
+                            label(class="text-dark" for="labSeroinmunologíaSerameba") Serameba
+            .row                
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaMonotest" name="lab.seroinmunología" value="Monotest") 
+                            label(class="text-dark" for="labSeroinmunologíaMonotest") Monotest
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloryIgG" name="lab.seroinmunología" value="H. Pylori IgG") 
+                            label(class="text-dark" for="labSeroinmunologíaHPyloriIgG") H. Pylori IgG    
             .row
-                //- TODO: @IsabelNaranjo 
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloryIgA" name="lab.seroinmunología" value="H. Pylori IgA") 
+                            label(class="text-dark" for="labSeroinmunologíaHPyloriIgA") H. Pylori IgA    
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloryIgM" name="lab.seroinmunología" value="H. Pylori IgM") 
+                            label(class="text-dark" for="labSeroinmunologíaHPyloriIgM") H. Pylori IgM  
+            .row
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDDengue"  
+                                data-toggle="collapse"
+                                data-target="#collapse-Dengue"
+                            ) 
+                            label(for="labIDDengue").text-dark Dengue
+                    .collapse.ml-4(id="collapse-Dengue")
+                        label(for="labIDDengueIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDDengueIgG"
+                                name="lab.Dengue"
+                                value="DengueIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDDengueIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDDengueIgM"
+                                name="lab.Dengue"
+                                value="DengueIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;          
+                 .col-sm
+                     .checkbox
+                         label
+                            input( type="checkbox" checked=false id="labSeroinmunologíaAglotinaciones" name="lab.seroinmunología" value="H. Aglutinaciones") 
+                            label(class="text-dark" for="labSeroinmunologíaAglutinaciones") Aglutinaciones  
+            .row
+                 .col-sm
+                    .checkbox
+                        label
+                            input(
+                                type="checkbox" 
+                                id="labIDEpsteinBarr"  
+                                data-toggle="collapse"
+                                data-target="#collapse-EpsteinBarr"
+                            ) 
+                            label(for="labIDEpsteinBarr").text-dark Epstein Barr
+                    .collapse.ml-4(id="collapse-EpsteinBarr")
+                        label(for="labIDEpsteinBarrIgG").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDEpsteinBarrIgG"
+                                name="lab.EpsteinBarr"
+                                value="EpsteinBarrIgG"
+                            )
+                            | IgG &nbsp;
+                        label(for="labIDEpsteinBarrIgM").checkbox-inline.text-dark
+                            input(
+                                type="checkbox"
+                                id="labIDEpsteinBarrIgM"
+                                name="lab.EpsteinBarr"
+                                value="EpsteinBarrIgM"
+                            ).checkbox-inline
+                            | IgM &nbsp;                                                                              
