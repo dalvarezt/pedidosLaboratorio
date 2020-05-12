@@ -68,5 +68,5 @@ div(class="card")
                         input(
                             type="text" 
                             id="imagenDensitometriaPediatricaOtrosi"
-                            onchange="$('#imagenDensitometriaPediatricaOtros').val('Otros: '+this.value)"
+                            onchange="$('#imagenDensitometriaPediatricaOtros').val(this.value!='' ? 'Otros: '+this.value) : '')"
                         ).form-control
