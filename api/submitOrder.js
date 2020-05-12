@@ -1,6 +1,7 @@
 'use strict';
 const DB = require('../util/DB');
 const fs = require('fs');
+const mailer = require('../util/mailer')
 
 const reportError = function (err, res) {
     console.error(err);
@@ -86,6 +87,12 @@ function postOrder(req, res) {
             } else {
                 res.status(200).send("OK");
             }
+            doc._id = body.id;
+            mailer({ 
+                to: process.env.NOTIFICATION_EMAIL, 
+                from: process.env.NOTIFICATION_SENDER,
+                subject: "Nueva orden de examenes recibida"
+            }, "admin/mailNote.pug", {pedido:doc}).catch( err => console.error("Error sending mail", err))
 
         }).catch(err => { reportError(err, res) })
 

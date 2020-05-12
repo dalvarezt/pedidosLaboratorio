@@ -1,0 +1,14 @@
+p  ¡Saludos!
+p
+    br
+    | Hay una nueva orden de examen esperando por ser atendida:
+    |
+dl
+    dt Enviada por:
+    dd= pedido.pedido.nombreDoctor
+    dt Fecha creación
+    -const dtOptions = {year: 'numeric', month: 'short', day: 'numeric',hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true, timeZone:'America/Guayaquil'}
+    dd= Intl.DateTimeFormat('es-419', dtOptions).format(Date.parse(pedido.pedido.timestamp))
+
+p Para visualizar los detalles de la orden, haga click en el siguiente enlace:
+    a(href= process.env.SERVER_URL+'/admin/abrirOrden?id='+pedido._id) Orden de Examenes
