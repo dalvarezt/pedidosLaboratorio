@@ -41,7 +41,7 @@ div(class="card")
                  .col-sm
                      .checkbox
                          label
-                            input( type="checkbox" checked=false id="labAutoinmunidadAnticirulina" name="lab.autoinmunidad" value="Anticitrulina (anti CPP)")
+                            input( type="checkbox" checked=false id="labAutoinmunidadAnticitrulina" name="lab.autoinmunidad" value="Anticitrulina (anti CPP)")
                             label(class="text-dark" for="labAutoinmunidadAnticitrulina") Anticitrulina (anti CPP)
                  .col-sm
                      .checkbox
@@ -90,6 +90,8 @@ div(class="card")
                                 id="labEMAntifosfolípidos"  
                                 data-toggle="collapse"
                                 data-target="#collapse-Antifosfolípidos"
+                                name="lab.autoinmunidad"
+                                value="Antifosfolípidos"
                             ) 
                             label(for="labEMAntifosfolípidos").text-dark Antifosfolípidos
                     .collapse.ml-4(id="collapse-Antifosfolípidos")
@@ -97,16 +99,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labEMAntifosfolípidosIgG"
-                                name="lab.Antifosfolípidos"
-                                value="AntifosfolípidosIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labEMAntifosfolípidos'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labEMAntifosfolípidosIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labEMAntifosfolípidosIgM"
-                                name="lab.Antifosfolípidos"
-                                value="Antifosfolípidos IgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labEMAntifosfolípidos'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;                           
                  .col-sm
@@ -114,9 +116,11 @@ div(class="card")
                         label
                             input(
                                 type="checkbox" 
-                                id="labEMAnticardiolipinas"  
+                                id="labEMAnticardiolipinas" 
+                                name="lab.autoinmunidad" 
                                 data-toggle="collapse"
                                 data-target="#collapse-Anticardiolipinas"
+                                value="Anticardiolipinas"
                             ) 
                             label(for="labEMAnticardiolipinas").text-dark Anticardiolipinas
                     .collapse.ml-4(id="collapse-Anticardiolipinas")
@@ -124,17 +128,17 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labEMAnticardiolipinasIgG"
-                                name="lab.Anticardiolipinas"
-                                value="AnticardiolipinasIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labEMAnticardiolipinas'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labEMAnticardiolipinasIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labEMAnticardiolipinasIgM"
-                                name="lab.Anticardiolipinas"
-                                value="Anticardiolipinas IgM"
-                            ).checkbox-inline
+                                value=" +IgM"
+                                onchange="var destField = $('#labEMAnticardiolipinas'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                           ).checkbox-inline
                             | IgM &nbsp;                           
             .row     
                  .col-sm
@@ -145,6 +149,8 @@ div(class="card")
                                 id="labEMANTIB2GP1"  
                                 data-toggle="collapse"
                                 data-target="#collapse-ANTIB2GP1"
+                                name="lab.autoinmunidad"
+                                value="ANTIB2GP1"
                             ) 
                             label(for="labEMANTIB2GP1").text-dark ANTIB2GP1
                     .collapse.ml-4(id="collapse-ANTIB2GP1")
@@ -152,16 +158,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labEMANTIB2GP1IgG"
-                                name="lab.ANTIB2GP1"
-                                value="ANTIB2GP1IgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labEMANTIB2GP1'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labEMANTIB2GP1IgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labEMANTIB2GP1IgM"
-                                name="lab.ANTIB2GP1"
-                                value="ANTIB2GP1 IgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labEMANTIB2GP1'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;                           
                  .col-sm
