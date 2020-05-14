@@ -24,6 +24,8 @@ div(class="card")
                                 id="labIDTSH"  
                                 data-toggle="collapse"
                                 data-target="#collapse-TSH"
+                                name="lab.inmunodiagnostico"
+                                value="TSH"
                             ) 
                             label(for="labIDTSH").text-dark TSH
                     .collapse.ml-4(id="collapse-TSH")
@@ -31,16 +33,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDTSHfT3"
-                                name="lab.TSH"
-                                value="TSHfT3"
+                                value=" +fT3"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | fT3 &nbsp;
                         label(for="labIDTSHfT4").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDTSHfT4"
-                                name="lab.TSH"
-                                value="TSH fT4"
+                                value=" +fT4"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | fT4 &nbsp;                           
                  .col-sm
@@ -49,8 +51,10 @@ div(class="card")
                             input(
                                 type="checkbox" 
                                 id="labIDFSH"  
-                                data-toggle="collapse"
+                                    data-toggle="collapse"
                                 data-target="#collapse-FSH"
+                                name="lab.inmunodiagnostico"
+                                value="FSH"                                
                             ) 
                             label(for="labIDFSH").text-dark FSH
                     .collapse.ml-4(id="collapse-FSH")
@@ -58,16 +62,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDFSHT3Total"
-                                name="lab.FSH"
-                                value="FSHT3Total"
+                                value=" +T3 Total"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | T3 Total &nbsp;
                         label(for="labIDFSHT4Total").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDFSHT4Total"
-                                name="lab.FSH"
-                                value="FSH T4Total"
+                                value=" +T4 Total"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | T4 Total &nbsp;                           
             .row
@@ -106,6 +110,8 @@ div(class="card")
                                 id="labIDProlactina"  
                                 data-toggle="collapse"
                                 data-target="#collapse-Prolactina"
+                                name="lab.inmunodiagnostico"
+                                value="Prolactina"                                
                             ) 
                             label(for="labIDProlactina").text-dark Prolactina
                     .collapse.ml-4(id="collapse-Prolactina")
@@ -113,36 +119,36 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDProlactinaAM"
-                                name="lab.prolactina"
-                                value="ProlactinaAM"
-                            )
+                                value=" +AM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"                            )
                             | AM &nbsp;
                         label(for="labIDProlactinaPM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDProlactinaPM"
-                                name="lab.prolactina"
-                                value="ProlactinaPM"
+                                value=" +PM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | PM &nbsp;             
                         label(for="labIDProlactina10").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDProlactina10"
-                                name="lab.prolactina"
-                                value="Prolactina10"
+                                value=" +10"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
-                            | 10 &nbsp;                                                                                                                     
-
+                            | 10 &nbsp;           
             .row
                  .col-sm
                     .checkbox
                         label
                             input(
                                 type="checkbox" 
-                                id="labIDCoitisol"  
+                                id="labIDCortisol"  
                                 data-toggle="collapse"
                                 data-target="#collapse-Cortisol"
+                                name="lab.inmunodiagnostico"
+                                value="Cortisol"                                
                             ) 
                             label(for="labIDCortisol").text-dark Cortisol
                     .collapse.ml-4(id="collapse-Cortisol")
@@ -150,16 +156,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDCortisolAM"
-                                name="lab.cortisol"
-                                value="CortisolAM"
+                                value=" +AM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | AM &nbsp;
                         label(for="labIDCortisolPM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDCortisolPM"
-                                name="lab.cortisol"
-                                value="CortisolPM"
+                                value=" +PM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | PM &nbsp;
                  .col-sm
@@ -183,7 +189,7 @@ div(class="card")
                             label(class="text-dark" for="labInmunodiagnosticoCurvaInsulina") Curva de Insulina
                             .d-sm-inline-flex.ml-3
                                 input(
-                                    class="form-control w-50 collapse" 
+                                    class="form-control w-200 collapse" 
                                     id="labInmunodiagnosticoCurvaInsulinaHoras" 
                                     type="number" 
                                     min=0 max=8 
@@ -254,8 +260,8 @@ div(class="card")
                  .col-sm
                      .checkbox
                          label
-                            input( type="checkbox" checked=false id="labInmunodiagnosticoTestosterona" name="lab.inmunodiagnostico" value="Testosterona")
-                            label(class="text-dark" for="labInmunodiagnosticoTestosterona") Testosterona
+                            input( type="checkbox" checked=false id="labInmunodiagnosticoTestosteronaLibre" name="lab.inmunodiagnostico" value="Testosterona libre")
+                            label(class="text-dark" for="labInmunodiagnosticoTestosteronaLibre") Testosterona libre
                  .col-sm
                     .checkbox
                         label
@@ -264,6 +270,8 @@ div(class="card")
                                 id="labIDAntiToxoplasma"  
                                 data-toggle="collapse"
                                 data-target="#collapse-AntiToxoplasma"
+                                name="lab.inmunodiagnostico"
+                                value="Anti Toxoplasma"                                
                             ) 
                             label(for="labIDAntiToxoplasma").text-dark Anti Toxoplasma
                     .collapse.ml-4(id="collapse-AntiToxoplasma")
@@ -271,16 +279,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDAntiToxoplasmaIgG"
-                                name="lab.AntiToxoplasma"
-                                value="AntiToxoplasmaIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiToxoplasmaIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDAntiToxoplasmaIgM"
-                                name="lab.AntiToxoplasma"
-                                value="AntiToxoplasma IgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp; 
             .row
@@ -292,6 +300,8 @@ div(class="card")
                                 id="labIDAntiRubeola"  
                                 data-toggle="collapse"
                                 data-target="#collapse-AntiRubeola"
+                                name="lab.inmunodiagnostico"
+                                value="Anti Rubeola"                                
                             ) 
                             label(for="labIDAntiRubeola").text-dark Anti Rubeola
                     .collapse.ml-4(id="collapse-AntiRubeola")
@@ -299,17 +309,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDAntiRubeolaIgG"
-                                name="lab.AntiRubeola"
-                                value="AntiRubeolaIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiRubeolaIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDAntiRubeolaIgM"
-                                name="lab.AntiRubeola"
-                                value="AntiRubeola IgM"
-                            ).checkbox-inline
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"                            ).checkbox-inline
                             | IgM &nbsp;                             
                  .col-sm
                     .checkbox
@@ -319,6 +328,8 @@ div(class="card")
                                 id="labIDAntiCMV"  
                                 data-toggle="collapse"
                                 data-target="#collapse-AntiCMV"
+                                name="lab.inmunodiagnostico"
+                                value="Anti CMV"                                
                             ) 
                             label(for="labIDAntiCMV").text-dark Anti CMV
                     .collapse.ml-4(id="collapse-AntiCMV")
@@ -326,16 +337,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDAntiCMVIgG"
-                                name="lab.AntiCMV"
-                                value="AntiCMVIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiCMVIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDAntiCMVIgM"
-                                name="lab.AntiCMV"
-                                value="AntiCMVIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;       
             .row
@@ -347,6 +358,8 @@ div(class="card")
                                 id="labIDAntiHerpesI"  
                                 data-toggle="collapse"
                                 data-target="#collapse-AntiHerpesI"
+                                name="lab.inmunodiagnostico"
+                                value="Anti Herpes I"                                
                             ) 
                             label(for="labIDAntiHerpesI").text-dark Anti Herpes I
                     .collapse.ml-4(id="collapse-AntiHerpesI")
@@ -354,16 +367,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDAntiHerpesIIgG"
-                                name="lab.AntiHerpesI"
-                                value="AntiHerpesIIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiHerpesIIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDAntiHerpesIIgM"
-                                name="lab.AntiHerpesI"
-                                value="AntiHerpesIIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;       
                  .col-sm
@@ -374,6 +387,8 @@ div(class="card")
                                 id="labIDAntiHerpesII"  
                                 data-toggle="collapse"
                                 data-target="#collapse-AntiHerpesII"
+                                name="lab.inmunodiagnostico"
+                                value="Anti Herpes II"                                
                             ) 
                             label(for="labIDAntiHerpesII").text-dark Anti Herpes II
                     .collapse.ml-4(id="collapse-AntiHerpesII")
@@ -381,16 +396,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDAntiHerpesIIIgG"
-                                name="lab.AntiHerpesII"
-                                value="AntiHerpesIIIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiHerpesIIIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDAntiHerpesIIIgM"
-                                name="lab.AntiHerpesII"
-                                value="AntiHerpesIIIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;       
             .row
@@ -402,6 +417,8 @@ div(class="card")
                                 id="labIDTORCH"  
                                 data-toggle="collapse"
                                 data-target="#collapse-TORCH"
+                                name="lab.inmunodiagnostico"
+                                value="TORCH"                                
                             ) 
                             label(for="labIDTORCH").text-dark TORCH
                     .collapse.ml-4(id="collapse-TORCH")
@@ -409,16 +426,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDTORCHIgG"
-                                name="lab.TORCH"
-                                value="TORCHIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDTORCHIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDTORCHIgM"
-                                name="lab.TORCH"
-                                value="TORCHIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
                  .col-sm
@@ -479,6 +496,8 @@ div(class="card")
                                 id="labIDChlamidia"  
                                 data-toggle="collapse"
                                 data-target="#collapse-Chlamidia"
+                                name="lab.inmunodiagnostico"
+                                value="Chlamidia"                                
                             ) 
                             label(for="labIDChlamidia").text-dark Chlamidia
                     .collapse.ml-4(id="collapse-Chlamidia")
@@ -486,24 +505,24 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDChlamidiaIgG"
-                                name="lab.Chlamidia"
-                                value="ChlamidiaIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDChlamidiaIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDChlamidiaIgM"
-                                name="lab.Chlamidia"
-                                value="ChlamidiaIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
                         label(for="labIDChlamidiaIgA").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDChlamidiaIgA"
-                                name="lab.Chlamidia"
-                                value="ChlamidiaIgA"
+                                value=" +IgA"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgA &nbsp;
                  .col-sm
@@ -514,6 +533,8 @@ div(class="card")
                                 id="labIDHepatitisA"  
                                 data-toggle="collapse"
                                 data-target="#collapse-HepatitisA"
+                                name="lab.inmunodiagnostico"
+                                value="Hepatitis A"                                
                             ) 
                             label(for="labIDHepatitisA").text-dark Hepatitis A
                     .collapse.ml-4(id="collapse-HepatitisA")
@@ -521,16 +542,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDHepatitisAIgG"
-                                name="lab.HepatitisA"
-                                value="HepatitisAIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDHepatitsAIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDHepatitsAIgM"
-                                name="lab.HepatitisA"
-                                value="HepatitisAIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
             .row
@@ -547,6 +568,8 @@ div(class="card")
                                 id="labIDHBc"  
                                 data-toggle="collapse"
                                 data-target="#collapse-HBc"
+                                name="lab.inmunodiagnostico"
+                                value="HBc"                                
                             ) 
                             label(for="labIDHBc").text-dark HBc
                     .collapse.ml-4(id="collapse-HBc")
@@ -554,16 +577,16 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDHBcIgG"
-                                name="lab.HBc"
-                                value="HBcIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDHBcIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDHBcIgM"
-                                name="lab.HBc"
-                                value="HBcIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
             .row    
