@@ -44,13 +44,13 @@ div(class="card")
                                 name="lab.patologia"
                                 value="Muestras:"
                              ) 
-                            label(class="text-dark" for="labBactereologiaMuestras") Muestras
+                            label(class="text-dark" for="labPatologiaMuestras") Muestras
                             .d-sm-inline-flex.ml-3
                                 input(
                                     class="form-control w-300 collapse" 
                                     id="labPatologiaMuestrasTexto" 
                                     type="text"
-                                    onchange="$('#labPatologiaMuestras').val('Muestra de - ' + this.value)"                                     
+                                    onchange="$('#labPatologiaMuestras').val('Muestras- ' + this.value)"                                     
                                 )                            
             .row
                  .col-sm
@@ -61,6 +61,8 @@ div(class="card")
                                 id="labPLHPVInvestigaciónPCR"  
                                 data-toggle="collapse"
                                 data-target="#collapse-HPVInvestigaciónPCR"
+                                name="lab.patología"
+                                value="HPVInvestigaciónPCR"
                             ) 
                             label(for="labPLHPVInvestigaciónPCR").text-dark HPV Investigación por PCR:
                     .collapse.ml-4(id="collapse-HPVInvestigaciónPCR")
@@ -68,15 +70,15 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labPLHPVInvestigaciónPCRAltoRiesgo"
-                                name="lab.HPVInvestigaciónPCR"
-                                value="HPV Investigación por PCR Alto Riesgo (14 subtipos)"
+                                value=" +AltoRiesgo"
+                                onchange="var destField = $('#labPLHPVInvestigaciónPCR'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | Alto Riesgo (14 subtipos)&nbsp;
                         label(for="labPLHPVInvestigaciónPCRTotal").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labPLHPVInvestigaciónPCRTotal"
-                                name="lab.HPVInvestigaciónPCR"
-                                value="HPVInvestigación por PCR Total (45 subtipos)"
+                                value=" +Total"
+                                onchange="var destField = $('#labPLHPVInvestigaciónPCR'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
-                            | TOTAL (45subtipos) &nbsp;  
+                            | TOTAL (45 subtipos) &nbsp;  
