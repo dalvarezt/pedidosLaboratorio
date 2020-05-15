@@ -59,40 +59,34 @@ div(class="card")
                          label
                             input( type="checkbox" checked=false id="labSeroinmunologíaFTAABS" name="lab.seroinmunología" value="FTA-ABS") 
                             label(class="text-dark" for="labSeroinmunologíaFTAABS") FTA-ABS    
-            .row                
-                 .col-sm
-                     .checkbox
-                         label
-                            input( type="checkbox" checked=false id="labSeroinmunologíaAsto" name="lab.seroinmunología" value="Asto") 
-                            label(class="text-dark" for="labSeroinmunologíaAsto") Asto
+            .row    
                  .col-sm
                      .checkbox
                          label
                             input( type="checkbox" checked=false id="labSeroinmunologíaSerameba" name="lab.seroinmunología" value="Serameba") 
-                            label(class="text-dark" for="labSeroinmunologíaSerameba") Serameba
-            .row                
+                            label(class="text-dark" for="labSeroinmunologíaSerameba") Serameba          
                  .col-sm
                      .checkbox
                          label
                             input( type="checkbox" checked=false id="labSeroinmunologíaMonotest" name="lab.seroinmunología" value="Monotest") 
                             label(class="text-dark" for="labSeroinmunologíaMonotest") Monotest
+            .row                 
                  .col-sm
                      .checkbox
                          label
-                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloryIgG" name="lab.seroinmunología" value="H. Pylori IgG") 
+                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloriIgG" name="lab.seroinmunología" value="H. Pylori IgG") 
                             label(class="text-dark" for="labSeroinmunologíaHPyloriIgG") H. Pylori IgG    
-            .row
                  .col-sm
                      .checkbox
                          label
-                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloryIgA" name="lab.seroinmunología" value="H. Pylori IgA") 
+                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloriIgA" name="lab.seroinmunología" value="H. Pylori IgA") 
                             label(class="text-dark" for="labSeroinmunologíaHPyloriIgA") H. Pylori IgA    
+            .row   
                  .col-sm
                      .checkbox
                          label
-                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloryIgM" name="lab.seroinmunología" value="H. Pylori IgM") 
+                            input( type="checkbox" checked=false id="labSeroinmunologíaHPyloriIgM" name="lab.seroinmunología" value="H. Pylori IgM") 
                             label(class="text-dark" for="labSeroinmunologíaHPyloriIgM") H. Pylori IgM  
-            .row
                  .col-sm
                     .checkbox
                         label
@@ -101,6 +95,8 @@ div(class="card")
                                 id="labIDDengue"  
                                 data-toggle="collapse"
                                 data-target="#collapse-Dengue"
+                                name="lab.seroinmunologia"
+                                value="Dengue"
                             ) 
                             label(for="labIDDengue").text-dark Dengue
                     .collapse.ml-4(id="collapse-Dengue")
@@ -108,24 +104,24 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDDengueIgG"
-                                name="lab.Dengue"
-                                value="DengueIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDDengue'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDDengueIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDDengueIgM"
-                                name="lab.Dengue"
-                                value="DengueIgM"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDDengue'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;          
+            .row                   
                  .col-sm
                      .checkbox
                          label
-                            input( type="checkbox" checked=false id="labSeroinmunologíaAglotinaciones" name="lab.seroinmunología" value="H. Aglutinaciones") 
+                            input( type="checkbox" checked=false id="labSeroinmunologíaAglutinaciones" name="lab.seroinmunología" value="H. Aglutinaciones") 
                             label(class="text-dark" for="labSeroinmunologíaAglutinaciones") Aglutinaciones  
-            .row
                  .col-sm
                     .checkbox
                         label
@@ -134,6 +130,8 @@ div(class="card")
                                 id="labIDEpsteinBarr"  
                                 data-toggle="collapse"
                                 data-target="#collapse-EpsteinBarr"
+                                name="lab.seroinmunologia"
+                                value="Eipsten Barr"                           
                             ) 
                             label(for="labIDEpsteinBarr").text-dark Epstein Barr
                     .collapse.ml-4(id="collapse-EpsteinBarr")
@@ -141,15 +139,15 @@ div(class="card")
                             input(
                                 type="checkbox"
                                 id="labIDEpsteinBarrIgG"
-                                name="lab.EpsteinBarr"
-                                value="EpsteinBarrIgG"
+                                value=" +IgG"
+                                onchange="var destField = $('#labIDEpsteinBarr'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDEpsteinBarrIgM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDEpsteinBarrIgM"
-                                name="lab.EpsteinBarr"
-                                value="EpsteinBarrIgM"
+                                value=" +IgM"
+                                onchange="var destField = $('#labIDEpsteinBarr'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;                                                                              

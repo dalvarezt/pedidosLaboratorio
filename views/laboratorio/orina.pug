@@ -85,7 +85,7 @@ div(class="card")
                  .col-sm
                      .checkbox
                          label
-                            input( type="checkbox" checked=false id="labOrinaMagensio" name="lab.orina" value="Magnesio") 
+                            input( type="checkbox" checked=false id="labOrinaMagnesio" name="lab.orina" value="Magnesio") 
                             label(class="text-dark" for="labOrinaMagnesio") Magnesio
                  .col-sm
                      .checkbox
@@ -106,5 +106,5 @@ div(class="card")
                         input(
                             type="text" 
                             id="OrinaOtros"
-                            onchange="$('#labOrina').val('Otros: '+this.value)"
+                            onchange="$('#labOrinaOtros').val('Otros: '+this.value)"
                         ).form-control
