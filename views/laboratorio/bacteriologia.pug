@@ -57,29 +57,29 @@ div(class="card")
                     .checkbox
                          label                            
                              input(
-                                type="checkbox" 
-                                checked=false 
-                                id="labBactereologíaBAAR"
+                                type="checkbox"
+                                checked=false
+                                id="labBactereologiaBAAR"
                                 data-toggle="collapse"
-                                data-target="#labBactereologiaBAARDíasN"
-                                name="lab.Bactereologia"
+                                data-target="#labBactereologiaBAARTexto"
+                                name="lab.bactereologia"
                                 value="BAAR"
                              ) 
-                             label(class="text-dark" for="laBactereologiaBAAR") BAAR
-                             label(class="text-dark" for="laBactereologiaBAAR") Días N°
-                             .d-sm-inline-flex.ml-3 
-                                 input(
-                                     class="form-control w-50 collapse" 
-                                     id="labBactereologiaBAARDíasN" 
-                                     type="text" 
-                                     onchange="$('#labBactereologiaBAAR').val('Curva de glucosa - ' + this.value)"
-                                 )                              
+                             label(for="labBactereologiaBAAR").text-dark BAAR
+                             label(for="labBactereologiaBAAR").text-dark Días N°
+                         .d-sm-inline-flex.ml-3                 
+                             input(                 
+                                class="form-control w-200 collapse"
+                                id="labBactereologiaBAARTexto"
+                                tyoe="text"
+                                onchange="$('#labBactereologiaBAAR').val('BAAR - ' + this.value)"
+                             )
             .row                                 
                  .col-sm
                      .checkbox
                          label
                             input( type="checkbox" checked=false id="labBactereologiaInvestigaciónDeHongos" name="lab.bactereologia" value="Investigación de Hongos (KOH)") 
-                            label(class="text-dark" for="labBactereologiaInvestigacióndeHongos") Investigación de Hongos (KOH)               
+                            label(class="text-dark" for="labBactereologiaInvestigaciónDeHongos") Investigación de Hongos (KOH)               
                  .col-sm
                      .checkbox
                         label                            
@@ -95,9 +95,10 @@ div(class="card")
                             label(class="text-dark" for="labBactereologiaControlTratamiento") Control tratamiento
                             .d-sm-inline-flex.ml-3
                                 input(
-                                    class="form-control w-150 collapse" 
+                                    class="form-control w-300 collapse" 
                                     id="labBactereologiaControlTratamientoTexto" 
                                     type="text" 
+                                    onchange="$('#labBactereologiaControlTratamiento').val('Control Tratamiento - ' + this.value)" 
                                 )              
             .row
                 .col-md
@@ -107,5 +108,5 @@ div(class="card")
                         input(
                             type="text" 
                             id="bactereologiaOtros"
-                            onchange="$('#labBactereologia').val('Otros: '+this.value)"
+                            onchange="$('#labBactereologiaOtros').val('Otros: '+this.value)"
                         ).form-control
