@@ -63,7 +63,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDFSHT3Total"
                                 value=" +T3 Total"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDFSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | T3 Total &nbsp;
                         label(for="labIDFSHT4Total").checkbox-inline.text-dark
@@ -71,7 +71,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDFSHT4Total"
                                 value=" +T4 Total"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDFSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | T4 Total &nbsp;                           
             .row
@@ -120,14 +120,14 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDProlactinaAM"
                                 value=" +AM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"                            )
+                                onchange="var destField = $('#labIDProlactina'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"                            )
                             | AM &nbsp;
                         label(for="labIDProlactinaPM").checkbox-inline.text-dark
                             input(
                                 type="checkbox"
                                 id="labIDProlactinaPM"
                                 value=" +PM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDProlactina'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | PM &nbsp;             
                         label(for="labIDProlactina10").checkbox-inline.text-dark
@@ -135,7 +135,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDProlactina10"
                                 value=" +10"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDProlactina'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | 10 &nbsp;           
             .row
@@ -157,7 +157,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDCortisolAM"
                                 value=" +AM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDCortisol'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | AM &nbsp;
                         label(for="labIDCortisolPM").checkbox-inline.text-dark
@@ -165,7 +165,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDCortisolPM"
                                 value=" +PM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDCortisol'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | PM &nbsp;
                  .col-sm
@@ -280,7 +280,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiToxoplasmaIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDToxoplasma'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiToxoplasmaIgM").checkbox-inline.text-dark
@@ -288,7 +288,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiToxoplasmaIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDToxoplasma'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp; 
             .row
@@ -310,7 +310,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiRubeolaIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDAntiRubeola'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiRubeolaIgM").checkbox-inline.text-dark
@@ -318,7 +318,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiRubeolaIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"                            ).checkbox-inline
+                                onchange="var destField = $('#labIDAntiRubeola'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"                            ).checkbox-inline
                             | IgM &nbsp;                             
                  .col-sm
                     .checkbox
@@ -338,7 +338,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiCMVIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDAntiCMV'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiCMVIgM").checkbox-inline.text-dark
@@ -346,7 +346,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiCMVIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDAntiCMV'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;       
             .row
@@ -368,7 +368,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiHerpesIIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDAntiHerpesI'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiHerpesIIgM").checkbox-inline.text-dark
@@ -376,7 +376,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiHerpesIIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDAntiHerpesI'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;       
                  .col-sm
@@ -397,7 +397,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiHerpesIIIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDAntiHerpesII'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDAntiHerpesIIIgM").checkbox-inline.text-dark
@@ -405,7 +405,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDAntiHerpesIIIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDAntiHerpesII'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;       
             .row
@@ -427,7 +427,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDTORCHIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDTORCH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDTORCHIgM").checkbox-inline.text-dark
@@ -435,7 +435,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDTORCHIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDTORCH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
                  .col-sm
@@ -506,7 +506,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDChlamidiaIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDChlamidia'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDChlamidiaIgM").checkbox-inline.text-dark
@@ -514,7 +514,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDChlamidiaIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDChlamidia'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
                         label(for="labIDChlamidiaIgA").checkbox-inline.text-dark
@@ -522,7 +522,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDChlamidiaIgA"
                                 value=" +IgA"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDChlamidia'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgA &nbsp;
                  .col-sm
@@ -543,7 +543,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDHepatitisAIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDHepatitisA'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDHepatitsAIgM").checkbox-inline.text-dark
@@ -551,7 +551,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDHepatitsAIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDHepatitisA'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
             .row
@@ -578,7 +578,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDHBcIgG"
                                 value=" +IgG"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDHBc'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
                             | IgG &nbsp;
                         label(for="labIDHBcIgM").checkbox-inline.text-dark
@@ -586,7 +586,7 @@ div(class="card")
                                 type="checkbox"
                                 id="labIDHBcIgM"
                                 value=" +IgM"
-                                onchange="var destField = $('#labIDTSH'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
+                                onchange="var destField = $('#labIDHBc'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             ).checkbox-inline
                             | IgM &nbsp;  
             .row    
