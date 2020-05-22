@@ -56,21 +56,19 @@ div(class="card")
                                 type="checkbox" 
                                 checked=false 
                                 id="labQuimicaSanguineaUrea"
-                                data-toggle="collapse"
-                                data-target="#labQuimicaSanguineaUreaBUNcb"
                                 name="lab.quimicaSanguinea"
                                 value="Urea"
                             ) 
                             label(class="text-dark" for="labQuimicaSanguineaUrea") Urea
                         .d-sm-inline-flex.ml-3
                             .checkbox
-                                label(id="labQuimicaSanguineaUreaBUNcb").collapse
+                                label(id="labQuimicaSanguineaUreaBUNcb")
                                     input(
                                         type="checkbox" 
                                         checked=false 
-                                        id="labQuimicaSanguineaUreaBUN" 
-                                        value="Urea|Urea - BUN"
-                                        onchange="var v=this.value.split('|'); $('#labQuimicaSanguineaUrea').val(this.checked ? v[1] : v[0])"
+                                        id="labQuimicaSanguineaUreaBUN"
+                                        name="lab.quimicaSanguinea"
+                                        value="BUN"
                                     )
                                     label(class="text-dark" for="labQuimicaSanguineaUreaBUN") BUN
             .row

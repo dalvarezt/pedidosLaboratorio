@@ -12,16 +12,18 @@ block content
               href="./pedido",
               class="btn btn-primary btn-lg active"
             ) Nueva orden de exámenes
-            a(
-              href="#"
-              class="btn btn-primary btn-lg active"
-              onclick="bootbox.alert('Gracias por su paciencia: página en construcción')"
-            ) Resultados
-            a(
-              href="#"
-              class="btn btn-primary btn-lg active"
-              onclick="bootbox.alert('Gracias por su paciencia: página en construcción')"
-            ) Mis pacientes
+            //-
+               a(
+                 href="#"
+                 class="btn btn-primary btn-lg active"
+                 onclick="bootbox.alert('Gracias por su paciencia: página en construcción')"
+               ) Resultados
+               a(
+                 href="#"
+                 class="btn btn-primary btn-lg active"
+                 onclick="bootbox.alert('Gracias por su paciencia: página en construcción')"
+               ) Mis pacientes
+            //
             if isAdmin
               a(
                 href="/admin/listadoOrdenes"
