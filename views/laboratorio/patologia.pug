@@ -73,12 +73,12 @@ div(class="card")
                                 value=" +AltoRiesgo"
                                 onchange="var destField = $('#labPLHPVInvestigaciónPCR'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
                             )
-                            | Alto Riesgo (14 subtipos)&nbsp;
-                        label(for="labPLHPVInvestigaciónPCRTotal").checkbox-inline.text-dark
+                            | Alto Riesgo (14 subtipos)&nbsp;   
+                        label(for="labPLHPVInvestigaciónPCRTotal").checkbox-inline.ml-5.text-dark
                             input(
                                 type="checkbox"
                                 id="labPLHPVInvestigaciónPCRTotal"
                                 value=" +Total"
                                 onchange="var destField = $('#labPLHPVInvestigaciónPCR'); if(this.checked) { destField.val(destField.val() + this.value ) } else {destField.val(destField.val().replace(this.value, ''))}"
-                            ).checkbox-inline
+                            )
                             | TOTAL (45 subtipos) &nbsp;  
