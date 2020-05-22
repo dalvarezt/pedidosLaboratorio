@@ -98,13 +98,4 @@ div(class="card")
                          label
                             input( type="checkbox" checked=false id="labOrinaPanelDrogas" name="lab.orina" value="Panel de drogas (abuso)") 
                             label(class="text-dark" for="labOrinaPanelDrogas") Panel de drogas (abuso)
-            .row
-                .col-md
-                    .form-group
-                        input(type="hidden" name="lab.orina" id="labOrinaOtros")
-                        label(class="text-dark" for="labOrinaOtros") Otros:
-                        input(
-                            type="text" 
-                            id="OrinaOtros"
-                            onchange="$('#labOrinaOtros').val('Otros: '+this.value)"
-                        ).form-control
+ 
