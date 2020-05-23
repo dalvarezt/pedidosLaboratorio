@@ -1,0 +1,41 @@
+.card
+    .card-header.bg-secondary(id="labOtrosTitulo")
+        h2.mb-0
+            button(
+                type="button"
+                data-toggle="collapse"
+                data-target="#labOtros"
+                aria-expanded="false"
+                aria-controls="labOtros"
+            ).btn.btn-link.text-white
+                span(
+                    data-toggle="collapse" 
+                    data-target="#labOtros"
+                ).arrow-toggle.collapsed
+                    i.material-icons.icon-arrow-up expand_more
+                    i.material-icons.icon-arrow-down expand_less
+                | Otros 
+    .collapse.hide(id="labOtros" aria-labelledby="labOtrosTitulo" data-parent="#laboratorio")
+        .card-body
+            .row
+                .col-md
+                    .form-group
+                        input(
+                            type="hidden"
+                            name="laboratorio.otros"
+                            id="labOtros"
+                        )
+                        label(for="labOtrosIn") Otros:
+                        textarea(id="labOtrosIn").form-control
+                    script. 
+                        function labOtrosChange(){
+                            if($("#labOtrosIn").val() != ""){
+                                $("#labOtros").val("Otros: " + $("#labOtrosIn").val());
+                            } else {
+                                $("#labOtros").val("");
+                            }
+                        }
+                        window.addEventListener("load", ()=>{
+                            $("#labOtrosIn").bind("input cut paste", labOtrosChange)
+                        })
+            .row.mb-4 &nbsp;
